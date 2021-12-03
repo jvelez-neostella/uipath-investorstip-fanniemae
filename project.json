@@ -3,12 +3,20 @@
   "description": "",
   "main": "Main.xaml",
   "dependencies": {
+    "UiPath.DataService.Activities": "[21.10.0]",
     "UiPath.Excel.Activities": "[2.9.3]",
     "UiPath.System.Activities": "[20.10.1]",
     "UiPath.UIAutomation.Activities": "[20.10.6]"
   },
   "webServices": [],
-  "entitiesStores": [],
+  "entitiesStores": [
+    {
+      "serviceDocument": ".entities/EntitiesStore.json",
+      "tenantName": "SecondaryMarketing",
+      "namespace": "fanniemae",
+      "uniqueReference": "+zQ0Giug6xtCLwB1wju+b5R5i6F37A/rcQZkHqmvYgU="
+    }
+  ],
   "schemaVersion": "4.0",
   "studioVersion": "20.10.2.0",
   "projectVersion": "1.0.0",
