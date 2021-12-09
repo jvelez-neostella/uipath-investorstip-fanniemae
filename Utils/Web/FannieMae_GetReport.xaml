@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1464,2545</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1794,2545</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>FannieMae_GetReport_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="35">
@@ -48,7 +48,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="28">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="56">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -77,6 +77,7 @@
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
       <AssemblyReference>DataService.fanniemae</AssemblyReference>
       <AssemblyReference>UiPath.DataService.Definition</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="FannieMae_GetReport" sap:VirtualizedContainerService.HintSize="993,2440" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -151,7 +152,7 @@
                               <OutArgument x:TypeArguments="x:String">[ReportSheetName]</OutArgument>
                             </ui:AssignOperation.To>
                             <ui:AssignOperation.Value>
-                              <InArgument x:TypeArguments="x:String">[ReportSheetName]</InArgument>
+                              <InArgument x:TypeArguments="x:String">[report.ReportSheetName]</InArgument>
                             </ui:AssignOperation.Value>
                           </ui:AssignOperation>
                           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
@@ -213,12 +214,8 @@
                     </ui:Click>
                     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Download_Report workflow" sap:VirtualizedContainerService.HintSize="797,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="Utils\Web\Download_Report.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
-                        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_SheetExist">
-                          <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="BoolContainSheet" />
-                        </OutArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_SheetName">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="ReportSheetName" />
-                        </InArgument>
+                        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_SheetExist">[BoolContainSheet]</OutArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_SheetName">[ReportSheetName]</InArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
                     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="797,91" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[String.Format(&quot;{0} downloaded&quot;,ReportName)]">
@@ -246,18 +243,10 @@
                           </sap:WorkflowViewStateService.ViewState>
                           <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke MoveFile workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" UnSafe="False" WorkflowFileName="Utils\MoveFile.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_SharedPath">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="LocationToSave" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_FileName">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="ReportName" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_SheetName">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="ReportSheetName" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_DownLoadPath">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="DownloadPath" />
-                              </InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_SharedPath">[LocationToSave]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_FileName">[ReportName]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_SheetName">[ReportSheetName]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_DownLoadPath">[DownloadPath]</InArgument>
                             </ui:InvokeWorkflowFile.Arguments>
                           </ui:InvokeWorkflowFile>
                         </Sequence>
