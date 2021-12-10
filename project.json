@@ -1,7 +1,7 @@
 {
   "name": "uipath-investorstip-fanniemae",
   "description": "",
-  "main": "Main.xaml",
+  "main": "Fannie Mae investor stip.xaml",
   "dependencies": {
     "UiPath.DataService.Activities": "[21.10.0]",
     "UiPath.Excel.Activities": "[2.9.3]",
@@ -49,8 +49,8 @@
   "expressionLanguage": "VisualBasic",
   "entryPoints": [
     {
-      "filePath": "Main.xaml",
-      "uniqueId": "18085ebd-25c1-4ca7-b953-71ae84394986",
+      "filePath": "Fannie Mae investor stip.xaml",
+      "uniqueId": "ac5225ba-41ba-4480-89b5-61c3b141ce20",
       "input": [],
       "output": []
     }
