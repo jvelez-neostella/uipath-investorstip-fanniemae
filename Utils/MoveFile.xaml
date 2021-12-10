@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1151,741</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1455,824</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>MoveFile_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="42">
@@ -39,7 +39,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="24">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="48">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -64,9 +64,11 @@
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="MoveFile" sap:VirtualizedContainerService.HintSize="526,626" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="MoveFile" sap:VirtualizedContainerService.HintSize="755,719" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="FileExist" />
     </Sequence.Variables>
@@ -75,11 +77,15 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:MoveFile ContinueOnError="{x:Null}" Destination="[in_SharedPath+&quot;\&quot;+in_SheetName+&quot;.csv&quot;]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="484,157" sap2010:WorkflowViewState.IdRef="MoveFile_2" Overwrite="True" Path="[in_DownLoadPath+&quot;\&quot;+in_FileName]" />
-    <ui:PathExists DisplayName="Path Exists" Exists="[FileExist]" sap:VirtualizedContainerService.HintSize="484,89" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[in_SharedPath+&quot;\&quot;+in_SheetName+&quot;.csv&quot;]" PathType="File" />
-    <If Condition="[FileExist]" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_1">
+    <ui:MoveFile ContinueOnError="{x:Null}" Destination="[in_SharedPath+&quot;\&quot;+in_SheetName+&quot;.csv&quot;]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="713,157" sap2010:WorkflowViewState.IdRef="MoveFile_2" Overwrite="True" Path="[in_DownLoadPath+&quot;\&quot;+in_FileName]" />
+    <ui:PathExists DisplayName="Path Exists" Exists="[FileExist]" sap:VirtualizedContainerService.HintSize="713,89" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[in_SharedPath+&quot;\&quot;+in_SheetName+&quot;.csv&quot;]" PathType="File" />
+    <Throw Exception="[New BusinessRuleException(String.Format(&quot;Files have been left in the Downloads folder of the VM in the Orchestrator log&quot;))]" sap:VirtualizedContainerService.HintSize="713,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
+    <If Condition="[FileExist]" sap:VirtualizedContainerService.HintSize="713,239" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Then>
+        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[String.Format(&quot;File {0} save at the path {1}&quot;,in_SheetName,in_SharedPath)]" />
+      </If.Then>
       <If.Else>
-        <Throw Exception="[New BusinessRuleException(String.Format(&quot;Files have been left in the Downloads folder of the VM in the Orchestrator log&quot;))]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
+        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Error" Message="[String.Format(&quot;Files have been left in the Downloads folder of the VM in the Orchestrator log&quot;)]" />
       </If.Else>
     </If>
   </Sequence>
