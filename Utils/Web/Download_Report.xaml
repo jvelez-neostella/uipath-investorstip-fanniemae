@@ -2,11 +2,12 @@
   <x:Members>
     <x:Property Name="out_FileExist" Type="OutArgument(x:Boolean)" />
     <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="io_FileDownloadedPath" Type="InOutArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1455,1450</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1269,1450</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Download_Report_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="33">
@@ -82,7 +83,6 @@
   <Sequence DisplayName="Download_Report" sap:VirtualizedContainerService.HintSize="725,1345" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="BoolContainSheet" />
-      <Variable x:TypeArguments="x:String" Name="LastFileDownloaded" />
       <Variable x:TypeArguments="x:Boolean" Name="FileExist" />
       <Variable x:TypeArguments="x:Boolean" Name="SaveAsWindow" />
     </Sequence.Variables>
@@ -138,13 +138,13 @@
     </If>
     <Assign sap:VirtualizedContainerService.HintSize="683,60" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
-        <OutArgument x:TypeArguments="x:String">[LastFileDownloaded]</OutArgument>
+        <OutArgument x:TypeArguments="x:String">[io_FileDownloadedPath]</OutArgument>
       </Assign.To>
       <Assign.Value>
         <InArgument x:TypeArguments="x:String">[Directory.GetFiles(System.Environment.GetFolderPath(Environment.SpecialFolder.UserProfile)+"\Downloads","*.csv").OrderByDescending(Function(d) New FileInfo(d).CreationTime).Tolist(0)]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:PathExists DisplayName="Validate if file was downloaded" Exists="[FileExist]" sap:VirtualizedContainerService.HintSize="683,89" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[LastFileDownloaded]" PathType="File" />
+    <ui:PathExists DisplayName="Validate if file was downloaded" Exists="[FileExist]" sap:VirtualizedContainerService.HintSize="683,89" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[io_FileDownloadedPath]" PathType="File" />
     <If Condition="[FileExist]" sap:VirtualizedContainerService.HintSize="683,725" sap2010:WorkflowViewState.IdRef="If_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -174,7 +174,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_Config(&quot;SmtpCredentials&quot;).ToString]" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[MailPass]" Username="[MailUser]" />
-          <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="File download has failed, please address&#xD;&#xA;&#xD;&#xA;- Bot.&#xD;&#xA;" DisplayName="Send SMTP Mail Message" Email="[MailUser]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="334,192" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="False" Port="[Convert.ToInt32(in_Config(&quot;SmtpPort&quot;))]" SecureConnection="Auto" SecurePassword="[MailPass]" Server="[in_Config(&quot;SmtpServer&quot;).ToString]" Subject="[String.Format(&quot;Fannie Mae Investor Secondary Marketing Log {0} File download has falied&quot;,DateTime.Now.ToString(&quot;MM-dd-yy&quot;))]" To="[in_Config(&quot;SmtpRecipient&quot;).ToString]">
+          <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="File download has failed, please address&#xA;&#xA;- Bot.&#xA;" DisplayName="Send SMTP Mail Message" Email="[MailUser]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="334,192" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="False" Port="[Convert.ToInt32(in_Config(&quot;SmtpPort&quot;))]" SecureConnection="Auto" SecurePassword="[MailPass]" Server="[in_Config(&quot;SmtpServer&quot;).ToString]" Subject="[String.Format(&quot;Fannie Mae Investor Secondary Marketing Log {0} File download has falied&quot;,DateTime.Now.ToString(&quot;MM-dd-yy&quot;))]" To="[in_Config(&quot;SmtpRecipient&quot;).ToString]">
             <ui:SendMail.Files>
               <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
             </ui:SendMail.Files>

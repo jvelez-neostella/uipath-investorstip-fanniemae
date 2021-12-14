@@ -1,14 +1,14 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="FannieMae_Login" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="FannieMae_Login" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1455,2281</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1695,2499</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>FannieMae_Login_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="31">
+    <scg:List x:TypeArguments="x:String" Capacity="32">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -40,6 +40,7 @@
       <x:String>UiPath.Mail</x:String>
       <x:String>UiPath.Mail.SMTP.Activities</x:String>
       <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>UiPath.Core.Activities.Orchestrator</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -77,103 +78,45 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="FannieMae_Login" sap:VirtualizedContainerService.HintSize="1336,2176" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="FannieMae_Login" sap:VirtualizedContainerService.HintSize="1705,2394" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="ss:SecureString" Name="Password" />
       <Variable x:TypeArguments="x:String" Default="p428bbnw" Name="Username" />
+      <Variable x:TypeArguments="x:String" Name="ExceptionID" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1294,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;FannieMae_Login Starts...&quot;]" />
-    <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_Config(&quot;FMCredentials&quot;).ToString]" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="1294,22" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[Password]" Username="[Username]" />
-    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Fannie Mae WebPage" sap:VirtualizedContainerService.HintSize="1294,1760" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="[in_Config(&quot;LoginURL&quot;).ToString]">
-      <ui:OpenBrowser.Body>
-        <ActivityAction x:TypeArguments="x:Object">
-          <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
-          </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1260,1659" sap2010:WorkflowViewState.IdRef="Sequence_2">
-            <Sequence.Variables>
-              <Variable x:TypeArguments="x:Boolean" Name="ElementExist" />
-            </Sequence.Variables>
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <ui:UiElementExists DisplayName="Validate user input" Exists="[ElementExist]" sap:VirtualizedContainerService.HintSize="1218,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
-              <ui:UiElementExists.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="34789f75-ec6a-4f0a-b98b-865674499cbe" InformativeScreenshot="17d7aef24091364f330218dcc583ac2e" Selector="&lt;webctrl tag='INPUT' type='text' /&gt;">
-                  <ui:Target.TimeoutMS>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:Target.TimeoutMS>
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
-                </ui:Target>
-              </ui:UiElementExists.Target>
-            </ui:UiElementExists>
-            <If Condition="[ElementExist]" DisplayName="Validate if input exist" sap:VirtualizedContainerService.HintSize="1218,1421" sap2010:WorkflowViewState.IdRef="If_1">
-              <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="797,1274" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1663,2171" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Sequence sap:VirtualizedContainerService.HintSize="1625,1944" sap2010:WorkflowViewState.IdRef="Sequence_9">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1583,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;FannieMae_Login Starts...&quot;]" />
+          <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_Config(&quot;FMCredentials&quot;).ToString]" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="1583,22" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[Password]" Username="[Username]" />
+          <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Fannie Mae WebPage" sap:VirtualizedContainerService.HintSize="1583,1659" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="[in_Config(&quot;LoginURL&quot;).ToString]">
+            <ui:OpenBrowser.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1549,1558" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:Boolean" Name="ElementExist" />
+                  </Sequence.Variables>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="755,22" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
-                  <ui:SetValue AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Set username" sap:VirtualizedContainerService.HintSize="755,134" sap2010:WorkflowViewState.IdRef="SetValue_1" Text="[Username]">
-                    <ui:SetValue.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a98630d6-c7b3-4c38-9d85-ef26d8e7e1db" InformativeScreenshot="17d7aef24091364f330218dcc583ac2e" Selector="&lt;webctrl tag='INPUT' type='text' /&gt;">
-                        <ui:Target.TimeoutMS>
-                          <InArgument x:TypeArguments="x:Int32" />
-                        </ui:Target.TimeoutMS>
-                        <ui:Target.WaitForReady>
-                          <InArgument x:TypeArguments="ui:WaitForReady" />
-                        </ui:Target.WaitForReady>
-                      </ui:Target>
-                    </ui:SetValue.Target>
-                  </ui:SetValue>
-                  <ui:TypeSecureText AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type password" EmptyField="True" sap:VirtualizedContainerService.HintSize="755,106" sap2010:WorkflowViewState.IdRef="TypeSecureText_1" SecureText="[Password]" SimulateType="True">
-                    <ui:TypeSecureText.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a6572d15-f0e6-4f40-989d-6d1200db15c1" InformativeScreenshot="f93f3b18aa143bf062d8fb673181caa5" Selector="&lt;html app='chrome.exe' title='Fannie Mae Authentication &amp;amp; Authorization Services - Central Login' /&gt;&lt;webctrl tag='INPUT' type='password' /&gt;">
-                        <ui:Target.TimeoutMS>
-                          <InArgument x:TypeArguments="x:Int32" />
-                        </ui:Target.TimeoutMS>
-                        <ui:Target.WaitForReady>
-                          <InArgument x:TypeArguments="ui:WaitForReady" />
-                        </ui:Target.WaitForReady>
-                      </ui:Target>
-                    </ui:TypeSecureText.Target>
-                  </ui:TypeSecureText>
-                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Sing On" sap:VirtualizedContainerService.HintSize="755,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
-                    <ui:Click.CursorPosition>
-                      <ui:CursorPosition Position="Center">
-                        <ui:CursorPosition.OffsetX>
-                          <InArgument x:TypeArguments="x:Int32" />
-                        </ui:CursorPosition.OffsetX>
-                        <ui:CursorPosition.OffsetY>
-                          <InArgument x:TypeArguments="x:Int32" />
-                        </ui:CursorPosition.OffsetY>
-                      </ui:CursorPosition>
-                    </ui:Click.CursorPosition>
-                    <ui:Click.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d2838e70-eaf0-47d0-94fc-0a76ce050925" InformativeScreenshot="76164223dfd450d47ce4be72428efc08" Selector="&lt;webctrl aaname='                         Sign On                     ' tag='A' /&gt;">
-                        <ui:Target.TimeoutMS>
-                          <InArgument x:TypeArguments="x:Int32" />
-                        </ui:Target.TimeoutMS>
-                        <ui:Target.WaitForReady>
-                          <InArgument x:TypeArguments="ui:WaitForReady" />
-                        </ui:Target.WaitForReady>
-                      </ui:Target>
-                    </ui:Click.Target>
-                  </ui:Click>
-                  <ui:UiElementExists DisplayName="Element Exist - New Best Efforts" Exists="[ElementExist]" sap:VirtualizedContainerService.HintSize="755,106" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+                  <ui:UiElementExists DisplayName="Validate user input" Exists="[ElementExist]" sap:VirtualizedContainerService.HintSize="1507,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
                     <ui:UiElementExists.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6c06d140-c10a-4e57-94a6-fe871f7df0af" InformativeScreenshot="adf2dc2f4222196063f3c9c109b34f94" Selector="&lt;webctrl aaname='New Best Efforts' parentid='static-saved-pricing-config-menu' tag='A' /&gt;">
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="34789f75-ec6a-4f0a-b98b-865674499cbe" InformativeScreenshot="17d7aef24091364f330218dcc583ac2e" Selector="&lt;webctrl tag='INPUT' type='text' /&gt;">
                         <ui:Target.TimeoutMS>
                           <InArgument x:TypeArguments="x:Int32" />
                         </ui:Target.TimeoutMS>
@@ -183,33 +126,134 @@
                       </ui:Target>
                     </ui:UiElementExists.Target>
                   </ui:UiElementExists>
-                  <If Condition="[ElementExist]" DisplayName="Validate if credentials are incorrect" sap:VirtualizedContainerService.HintSize="755,508" sap2010:WorkflowViewState.IdRef="If_2">
+                  <If Condition="[ElementExist]" DisplayName="Validate if input exist" sap:VirtualizedContainerService.HintSize="1507,1320" sap2010:WorkflowViewState.IdRef="If_1">
                     <If.Then>
-                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click new best efforts" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
-                        <ui:Click.CursorPosition>
-                          <ui:CursorPosition Position="Center">
-                            <ui:CursorPosition.OffsetX>
-                              <InArgument x:TypeArguments="x:Int32" />
-                            </ui:CursorPosition.OffsetX>
-                            <ui:CursorPosition.OffsetY>
-                              <InArgument x:TypeArguments="x:Int32" />
-                            </ui:CursorPosition.OffsetY>
-                          </ui:CursorPosition>
-                        </ui:Click.CursorPosition>
-                        <ui:Click.Target>
-                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="fc1a6f9e-3833-4cd7-9597-827ba72a997b" InformativeScreenshot="a83cd383404394a81e5b31f29a1bc42a" Selector="&lt;webctrl aaname='New Best Efforts' parentid='static-saved-pricing-config-menu' tag='A' /&gt;">
-                            <ui:Target.TimeoutMS>
-                              <InArgument x:TypeArguments="x:Int32" />
-                            </ui:Target.TimeoutMS>
-                            <ui:Target.WaitForReady>
-                              <InArgument x:TypeArguments="ui:WaitForReady" />
-                            </ui:Target.WaitForReady>
-                          </ui:Target>
-                        </ui:Click.Target>
-                      </ui:Click>
+                      <Sequence sap:VirtualizedContainerService.HintSize="767,1173" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="725,22" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
+                        <ui:SetValue AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Set username" sap:VirtualizedContainerService.HintSize="725,134" sap2010:WorkflowViewState.IdRef="SetValue_1" Text="[Username]">
+                          <ui:SetValue.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a98630d6-c7b3-4c38-9d85-ef26d8e7e1db" InformativeScreenshot="17d7aef24091364f330218dcc583ac2e" Selector="&lt;webctrl tag='INPUT' type='text' /&gt;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:SetValue.Target>
+                        </ui:SetValue>
+                        <ui:TypeSecureText AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type password" EmptyField="True" sap:VirtualizedContainerService.HintSize="725,106" sap2010:WorkflowViewState.IdRef="TypeSecureText_1" SecureText="[Password]" SimulateType="True">
+                          <ui:TypeSecureText.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a6572d15-f0e6-4f40-989d-6d1200db15c1" InformativeScreenshot="f93f3b18aa143bf062d8fb673181caa5" Selector="&lt;html app='chrome.exe' title='Fannie Mae Authentication &amp;amp; Authorization Services - Central Login' /&gt;&lt;webctrl tag='INPUT' type='password' /&gt;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:TypeSecureText.Target>
+                        </ui:TypeSecureText>
+                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Sing On" sap:VirtualizedContainerService.HintSize="725,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+                          <ui:Click.CursorPosition>
+                            <ui:CursorPosition Position="Center">
+                              <ui:CursorPosition.OffsetX>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:CursorPosition.OffsetX>
+                              <ui:CursorPosition.OffsetY>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:CursorPosition.OffsetY>
+                            </ui:CursorPosition>
+                          </ui:Click.CursorPosition>
+                          <ui:Click.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d2838e70-eaf0-47d0-94fc-0a76ce050925" InformativeScreenshot="76164223dfd450d47ce4be72428efc08" Selector="&lt;webctrl aaname='                         Sign On                     ' tag='A' /&gt;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:Click.Target>
+                        </ui:Click>
+                        <ui:UiElementExists DisplayName="Element Exist - New Best Efforts" Exists="[ElementExist]" sap:VirtualizedContainerService.HintSize="725,106" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+                          <ui:UiElementExists.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6c06d140-c10a-4e57-94a6-fe871f7df0af" InformativeScreenshot="adf2dc2f4222196063f3c9c109b34f94" Selector="&lt;webctrl aaname='New Best Efforts' parentid='static-saved-pricing-config-menu' tag='A' /&gt;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:UiElementExists.Target>
+                        </ui:UiElementExists>
+                        <If Condition="[ElementExist]" DisplayName="Validate if credentials are incorrect" sap:VirtualizedContainerService.HintSize="725,407" sap2010:WorkflowViewState.IdRef="If_2">
+                          <If.Then>
+                            <Sequence sap:VirtualizedContainerService.HintSize="376,260" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click new best efforts" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+                                <ui:Click.CursorPosition>
+                                  <ui:CursorPosition Position="Center">
+                                    <ui:CursorPosition.OffsetX>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:CursorPosition.OffsetX>
+                                    <ui:CursorPosition.OffsetY>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:CursorPosition.OffsetY>
+                                  </ui:CursorPosition>
+                                </ui:Click.CursorPosition>
+                                <ui:Click.Target>
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="fc1a6f9e-3833-4cd7-9597-827ba72a997b" InformativeScreenshot="a83cd383404394a81e5b31f29a1bc42a" Selector="&lt;webctrl aaname='New Best Efforts' parentid='static-saved-pricing-config-menu' tag='A' /&gt;">
+                                    <ui:Target.TimeoutMS>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:Target.TimeoutMS>
+                                    <ui:Target.WaitForReady>
+                                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                                    </ui:Target.WaitForReady>
+                                  </ui:Target>
+                                </ui:Click.Target>
+                              </ui:Click>
+                              <ui:SetAsset TimeoutMS="{x:Null}" AssetName="[in_Config(&quot;SetLoginRetry&quot;).ToString]" DisplayName="Set Asset" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="SetAsset_1" Value="[0]" />
+                            </Sequence>
+                          </If.Then>
+                          <If.Else>
+                            <Sequence sap:VirtualizedContainerService.HintSize="304,214" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                              <Sequence.Variables>
+                                <Variable x:TypeArguments="ss:SecureString" Name="MailPass" />
+                                <Variable x:TypeArguments="x:String" Name="MailUser" />
+                              </Sequence.Variables>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:String">[ExceptionID]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:String">B3</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <Throw DisplayName="Exception B3 Error" Exception="[new BusinessRuleException(&quot;Login to Fannie Mae portal failed&quot;)]" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                            </Sequence>
+                          </If.Else>
+                        </If>
+                      </Sequence>
                     </If.Then>
                     <If.Else>
-                      <Sequence sap:VirtualizedContainerService.HintSize="376,361" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                      <Sequence sap:VirtualizedContainerService.HintSize="695,515" sap2010:WorkflowViewState.IdRef="Sequence_5">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="ss:SecureString" Name="MailPass" />
                           <Variable x:TypeArguments="x:String" Name="MailUser" />
@@ -219,20 +263,81 @@
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_Config(&quot;SmtpCredentials&quot;).ToString]" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="GetRobotCredential_3" Password="[MailPass]" Username="[MailUser]" />
-                        <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="Login to investor portal failed&#xD;&#xA;&#xD;&#xA;- Bot.&#xD;&#xA;" DisplayName="Send SMTP Mail Message" Email="[MailUser]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendMail_2" IsBodyHtml="False" Port="[Convert.ToInt32(in_Config(&quot;SmtpPort&quot;))]" SecureConnection="Auto" SecurePassword="[MailPass]" Server="[in_Config(&quot;SmtpServer&quot;).ToString]" Subject="[String.Format(&quot;Fannie Mae Investor Secondary Marketing Log {0} Login to investor portal failed&quot;,DateTime.Now.ToString(&quot;MM-dd-yy&quot;))]" To="[in_Config(&quot;SmtpRecipient&quot;).ToString]">
-                          <ui:SendMail.Files>
-                            <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
-                          </ui:SendMail.Files>
-                        </ui:SendMail>
-                        <Throw DisplayName="Exception B3 Error" Exception="[new BusinessRuleException(&quot;Login to Fannie Mae portal failed&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                        <If Condition="[Convert.ToInt32(in_Config(&quot;LoginRetry&quot;)) &gt; 0]" DisplayName="Validate number of attempts" sap:VirtualizedContainerService.HintSize="653,423" sap2010:WorkflowViewState.IdRef="If_3">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <If.Then>
+                            <Sequence sap:VirtualizedContainerService.HintSize="304,214" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:String">[ExceptionID]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:String">B1</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <Throw DisplayName="Exception B1 Error" Exception="[new BusinessRuleException(&quot;Cannot acces Fannie Mae portal&quot;)]" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                            </Sequence>
+                          </If.Then>
+                          <If.Else>
+                            <Sequence sap:VirtualizedContainerService.HintSize="304,276" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:String">[ExceptionID]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:String">B2</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <ui:SetAsset TimeoutMS="{x:Null}" AssetName="[in_Config(&quot;SetLoginRetry&quot;).ToString]" DisplayName="Set Asset" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="SetAsset_2" Value="[1]" />
+                              <Throw DisplayName="Exception B2 Error" Exception="[new BusinessRuleException(&quot;Cannot acces Fannie Mae portal&quot;)]" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="Throw_3" />
+                            </Sequence>
+                          </If.Else>
+                        </If>
                       </Sequence>
                     </If.Else>
                   </If>
                 </Sequence>
-              </If.Then>
-              <If.Else>
-                <Sequence sap:VirtualizedContainerService.HintSize="376,361" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              </ActivityAction>
+            </ui:OpenBrowser.Body>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:OpenBrowser>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="1629,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[ExceptionID]" sap:VirtualizedContainerService.HintSize="496,473" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+              <Switch.Default>
+                <Sequence sap:VirtualizedContainerService.HintSize="376,408" sap2010:WorkflowViewState.IdRef="Sequence_14">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="ss:SecureString" Name="MailPass" />
                     <Variable x:TypeArguments="x:String" Name="MailUser" />
@@ -242,20 +347,63 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_Config(&quot;SmtpCredentials&quot;).ToString]" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Password="[MailPass]" Username="[MailUser]" />
-                  <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="Cannot access investor portal.&#xA;&#xA;- Bot.&#xA;" DisplayName="Send SMTP Mail Message" Email="[MailUser]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="False" Port="[Convert.ToInt32(in_Config(&quot;SmtpPort&quot;))]" SecureConnection="Auto" SecurePassword="[MailPass]" Server="[in_Config(&quot;SmtpServer&quot;).ToString]" Subject="[String.Format(&quot;Fannie Mae Investor Secondary Marketing Log {0} Cannot acces Investor portal&quot;,DateTime.Now.ToString(&quot;MM-dd-yy&quot;))]" To="[in_Config(&quot;SmtpRecipient&quot;).ToString]">
+                  <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_Config(&quot;SmtpCredentials&quot;).ToString]" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="GetRobotCredential_6" Password="[MailPass]" Username="[MailUser]" />
+                  <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="Cannot access investor portal.&#xA;&#xA;- Bot.&#xA;" DisplayName="Send SMTP Mail Message" Email="[MailUser]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="334,192" sap2010:WorkflowViewState.IdRef="SendMail_5" IsBodyHtml="False" Port="[Convert.ToInt32(in_Config(&quot;SmtpPort&quot;))]" SecureConnection="Auto" SecurePassword="[MailPass]" Server="[in_Config(&quot;SmtpServer&quot;).ToString]" Subject="[String.Format(&quot;Fannie Mae Investor Secondary Marketing Log {0} Cannot acces Investor portal&quot;,DateTime.Now.ToString(&quot;MM-dd-yy&quot;))]" To="[in_Config(&quot;SmtpRecipient&quot;).ToString]">
                     <ui:SendMail.Files>
                       <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                     </ui:SendMail.Files>
                   </ui:SendMail>
-                  <Throw DisplayName="Exception B2 Error" Exception="[new BusinessRuleException(&quot;Cannot acces Fannie Mae portal&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                  <Throw Exception="[new BusinessRuleException(exception.ToString)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_6" />
                 </Sequence>
-              </If.Else>
-            </If>
-          </Sequence>
-        </ActivityAction>
-      </ui:OpenBrowser.Body>
-    </ui:OpenBrowser>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1294,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;FannieMae_Login End...&quot;]" />
+              </Switch.Default>
+              <Sequence x:Key="B3" sap:VirtualizedContainerService.HintSize="376,408" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="ss:SecureString" Name="MailPass" />
+                  <Variable x:TypeArguments="x:String" Name="MailUser" />
+                </Sequence.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_Config(&quot;SmtpCredentials&quot;).ToString]" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="GetRobotCredential_4" Password="[MailPass]" Username="[MailUser]" />
+                <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="Login to investor portal failed&#xA;&#xA;- Bot.&#xA;" DisplayName="Send SMTP Mail Message" Email="[MailUser]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="334,192" sap2010:WorkflowViewState.IdRef="SendMail_3" IsBodyHtml="False" Port="[Convert.ToInt32(in_Config(&quot;SmtpPort&quot;))]" SecureConnection="Auto" SecurePassword="[MailPass]" Server="[in_Config(&quot;SmtpServer&quot;).ToString]" Subject="[String.Format(&quot;Fannie Mae Investor Secondary Marketing Log {0} Login to investor portal failed&quot;,DateTime.Now.ToString(&quot;MM-dd-yy&quot;))]" To="[in_Config(&quot;SmtpRecipient&quot;).ToString]">
+                  <ui:SendMail.Files>
+                    <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                  </ui:SendMail.Files>
+                </ui:SendMail>
+                <Throw Exception="[new BusinessRuleException(exception.ToString)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_4" />
+              </Sequence>
+              <Sequence x:Key="B1" sap:VirtualizedContainerService.HintSize="242,267" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="ss:SecureString" Name="MailPass" />
+                  <Variable x:TypeArguments="x:String" Name="MailUser" />
+                </Sequence.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_Config(&quot;SmtpCredentials&quot;).ToString]" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="GetRobotCredential_5" Password="[MailPass]" Username="[MailUser]" />
+                <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="Cannot access investor portal, please intervene to fix problem.&#xD;&#xA;&#xD;&#xA;- Bot.&#xD;&#xA;" DisplayName="Send SMTP Mail Message" Email="[MailUser]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SendMail_4" IsBodyHtml="False" Port="[Convert.ToInt32(in_Config(&quot;SmtpPort&quot;))]" SecureConnection="Auto" SecurePassword="[MailPass]" Server="[in_Config(&quot;SmtpServer&quot;).ToString]" Subject="[String.Format(&quot;Fannie Mae Investor Secondary Marketing Log {0} Cannot acces Investor portal&quot;,DateTime.Now.ToString(&quot;MM-dd-yy&quot;))]" To="[in_Config(&quot;SmtpRecipient&quot;).ToString]">
+                  <ui:SendMail.Files>
+                    <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                  </ui:SendMail.Files>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:SendMail>
+                <Throw Exception="[new BusinessRuleException(exception.ToString)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_5" />
+              </Sequence>
+            </Switch>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1663,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;FannieMae_Login End...&quot;]" />
   </Sequence>
 </Activity>

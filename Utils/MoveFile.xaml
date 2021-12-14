@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="MoveFile" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="MoveFile" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_SharedPath" Type="InArgument(x:String)" />
     <x:Property Name="in_FileName" Type="InArgument(x:String)" />
@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1455,1079</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1269,967</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>MoveFile_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="29">
@@ -76,7 +76,7 @@
       <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="MoveFile" sap:VirtualizedContainerService.HintSize="797,974" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="MoveFile" sap:VirtualizedContainerService.HintSize="476,862" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="FileExist" />
     </Sequence.Variables>
@@ -85,32 +85,44 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:MoveFile ContinueOnError="{x:Null}" Destination="[in_SharedPath+&quot;\&quot;+in_SheetName+&quot;.csv&quot;]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="755,157" sap2010:WorkflowViewState.IdRef="MoveFile_2" Overwrite="True" Path="[in_DownLoadPath+&quot;\&quot;+in_FileName]" />
-    <ui:PathExists DisplayName="Path Exists" Exists="[FileExist]" sap:VirtualizedContainerService.HintSize="755,89" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[in_SharedPath+&quot;\&quot;+in_SheetName+&quot;.csv&quot;]" PathType="File" />
-    <Throw Exception="[New BusinessRuleException(String.Format(&quot;Files have been left in the Downloads folder of the VM in the Orchestrator log&quot;))]" sap:VirtualizedContainerService.HintSize="755,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
-    <If Condition="[FileExist]" sap:VirtualizedContainerService.HintSize="755,494" sap2010:WorkflowViewState.IdRef="If_1">
-      <If.Then>
-        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[String.Format(&quot;File {0} save at the path {1}&quot;,in_SheetName,in_SharedPath)]" />
-      </If.Then>
-      <If.Else>
-        <Sequence sap:VirtualizedContainerService.HintSize="376,346" sap2010:WorkflowViewState.IdRef="Sequence_2">
-          <Sequence.Variables>
-            <Variable x:TypeArguments="ss:SecureString" Name="MailPass" />
-            <Variable x:TypeArguments="x:String" Name="MailUser" />
-          </Sequence.Variables>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="434,639" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <ui:MoveFile ContinueOnError="{x:Null}" Destination="[in_SharedPath+&quot;\&quot;+in_SheetName+&quot;.csv&quot;]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="384,157" sap2010:WorkflowViewState.IdRef="MoveFile_2" Overwrite="True" Path="[in_DownLoadPath]" />
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,477" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_Config(&quot;SmtpCredentials&quot;).ToString]" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[MailPass]" Username="[MailUser]" />
-          <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="Bot was unable to save the files in their respective folder location, please address the files left in the “Review” folder inside the “Downloads” folder&#xD;&#xA;&#xD;&#xA;- Bot.&#xD;&#xA;" DisplayName="Send SMTP Mail Message" Email="[MailUser]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="334,192" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="False" Port="[Convert.ToInt32(in_Config(&quot;SmtpPort&quot;))]" SecureConnection="Auto" SecurePassword="[MailPass]" Server="[in_Config(&quot;SmtpServer&quot;).ToString]" Subject="[String.Format(&quot;Fannie Mae Investor Secondary Marketing Log {0} Files have been left in the Downloads folder.&quot;,DateTime.Now.ToString(&quot;MM-dd-yy&quot;))]" To="[in_Config(&quot;SmtpRecipient&quot;).ToString]">
-            <ui:SendMail.Files>
-              <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
-            </ui:SendMail.Files>
-          </ui:SendMail>
-        </Sequence>
-      </If.Else>
-    </If>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence sap:VirtualizedContainerService.HintSize="376,408" sap2010:WorkflowViewState.IdRef="Sequence_2">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="ss:SecureString" Name="MailPass" />
+                <Variable x:TypeArguments="x:String" Name="MailUser" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_Config(&quot;SmtpCredentials&quot;).ToString]" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[MailPass]" Username="[MailUser]" />
+              <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="Bot was unable to save the files in their respective folder location, please address the files left in the “Review” folder inside the “Downloads” folder&#xA;&#xA;- Bot.&#xA;" DisplayName="Send SMTP Mail Message" Email="[MailUser]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="334,192" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="False" Port="[Convert.ToInt32(in_Config(&quot;SmtpPort&quot;))]" SecureConnection="Auto" SecurePassword="[MailPass]" Server="[in_Config(&quot;SmtpServer&quot;).ToString]" Subject="[String.Format(&quot;Fannie Mae Investor Secondary Marketing Log {0} Files have been left in the Downloads folder.&quot;,DateTime.Now.ToString(&quot;MM-dd-yy&quot;))]" To="[in_Config(&quot;SmtpRecipient&quot;).ToString]">
+                <ui:SendMail.Files>
+                  <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                </ui:SendMail.Files>
+              </ui:SendMail>
+              <Throw Exception="[New BusinessRuleException(String.Format(&quot;Files have been left in the Downloads folder of the VM in the Orchestrator log&quot;))]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[String.Format(&quot;File {0} save at the path {1}&quot;,in_SheetName,in_SharedPath)]" />
   </Sequence>
 </Activity>
