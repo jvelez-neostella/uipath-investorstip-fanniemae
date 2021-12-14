@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1695,2736</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1695,2690</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>FannieMae_Login_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="32">
@@ -75,10 +75,9 @@
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="FannieMae_Login" sap:VirtualizedContainerService.HintSize="1705,2631" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="FannieMae_Login" sap:VirtualizedContainerService.HintSize="1705,2585" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="ss:SecureString" Name="Password" />
       <Variable x:TypeArguments="x:String" Default="p428bbnw" Name="Username" />
@@ -89,23 +88,23 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1663,2408" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1663,2362" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="1625,2181" sap2010:WorkflowViewState.IdRef="Sequence_9">
+        <Sequence sap:VirtualizedContainerService.HintSize="1234,2135" sap2010:WorkflowViewState.IdRef="Sequence_9">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1583,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;FannieMae_Login Starts...&quot;]" />
-          <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_Config(&quot;FMCredentials&quot;).ToString]" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="1583,22" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[Password]" Username="[Username]" />
-          <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Fannie Mae WebPage" sap:VirtualizedContainerService.HintSize="1583,1896" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" NewSession="False" Private="False" Url="[in_Config(&quot;LoginURL&quot;).ToString]">
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1192,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;FannieMae_Login Starts...&quot;]" />
+          <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_Config(&quot;FMCredentials&quot;).ToString]" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="1192,22" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[Password]" Username="[Username]" />
+          <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Fannie Mae WebPage" sap:VirtualizedContainerService.HintSize="1192,1850" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" NewSession="False" Private="False" Url="[in_Config(&quot;LoginURL&quot;).ToString]">
             <ui:OpenBrowser.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1549,1795" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1158,1749" sap2010:WorkflowViewState.IdRef="Sequence_2">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:Boolean" Name="ElementExist" />
                     <Variable x:TypeArguments="x:Boolean" Name="ElementExist2" />
@@ -115,7 +114,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:UiElementExists DisplayName="Element Exist - New Best Efforts" Exists="[ElementExist2]" sap:VirtualizedContainerService.HintSize="1507,106" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
+                  <ui:UiElementExists DisplayName="Element Exist - New Best Efforts" Exists="[ElementExist2]" sap:VirtualizedContainerService.HintSize="1116,106" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
                     <ui:UiElementExists.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6c06d140-c10a-4e57-94a6-fe871f7df0af" InformativeScreenshot="adf2dc2f4222196063f3c9c109b34f94" Selector="&lt;webctrl aaname='New Best Efforts' parentid='static-saved-pricing-config-menu' tag='A' /&gt;">
                         <ui:Target.TimeoutMS>
@@ -127,7 +126,7 @@
                       </ui:Target>
                     </ui:UiElementExists.Target>
                   </ui:UiElementExists>
-                  <If Condition="[ElementExist2]" sap:VirtualizedContainerService.HintSize="1507,51" sap2010:WorkflowViewState.IdRef="If_4">
+                  <If Condition="[ElementExist2]" sap:VirtualizedContainerService.HintSize="1116,51" sap2010:WorkflowViewState.IdRef="If_4">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -158,7 +157,7 @@
                       </Sequence>
                     </If.Then>
                   </If>
-                  <ui:UiElementExists DisplayName="Validate user input" Exists="[ElementExist]" sap:VirtualizedContainerService.HintSize="1507,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+                  <ui:UiElementExists DisplayName="Validate user input" Exists="[ElementExist]" sap:VirtualizedContainerService.HintSize="1116,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
                     <ui:UiElementExists.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="34789f75-ec6a-4f0a-b98b-865674499cbe" InformativeScreenshot="17d7aef24091364f330218dcc583ac2e" Selector="&lt;webctrl tag='INPUT' type='text' /&gt;">
                         <ui:Target.TimeoutMS>
@@ -170,9 +169,9 @@
                       </ui:Target>
                     </ui:UiElementExists.Target>
                   </ui:UiElementExists>
-                  <If Condition="[ElementExist]" DisplayName="Validate if input exist" sap:VirtualizedContainerService.HintSize="1507,1320" sap2010:WorkflowViewState.IdRef="If_1">
+                  <If Condition="[ElementExist]" DisplayName="Validate if input exist" sap:VirtualizedContainerService.HintSize="1116,1274" sap2010:WorkflowViewState.IdRef="If_1">
                     <If.Then>
-                      <Sequence sap:VirtualizedContainerService.HintSize="767,1173" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                      <Sequence sap:VirtualizedContainerService.HintSize="767,1127" sap2010:WorkflowViewState.IdRef="Sequence_4">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -237,9 +236,9 @@
                             </ui:Target>
                           </ui:UiElementExists.Target>
                         </ui:UiElementExists>
-                        <If Condition="[ElementExist]" DisplayName="Validate if credentials are incorrect" sap:VirtualizedContainerService.HintSize="725,407" sap2010:WorkflowViewState.IdRef="If_2">
+                        <If Condition="[ElementExist]" DisplayName="Validate if credentials are incorrect" sap:VirtualizedContainerService.HintSize="725,361" sap2010:WorkflowViewState.IdRef="If_2">
                           <If.Then>
-                            <Sequence sap:VirtualizedContainerService.HintSize="376,260" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                            <Sequence sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_8">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -267,7 +266,6 @@
                                   </ui:Target>
                                 </ui:Click.Target>
                               </ui:Click>
-                              <ui:SetAsset TimeoutMS="{x:Null}" AssetName="[in_Config(&quot;SetLoginRetry&quot;).ToString]" DisplayName="Set Asset" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="SetAsset_1" Value="[0]" />
                             </Sequence>
                           </If.Then>
                           <If.Else>
@@ -297,7 +295,7 @@
                       </Sequence>
                     </If.Then>
                     <If.Else>
-                      <Sequence sap:VirtualizedContainerService.HintSize="695,515" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                      <Sequence sap:VirtualizedContainerService.HintSize="304,214" sap2010:WorkflowViewState.IdRef="Sequence_5">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="ss:SecureString" Name="MailPass" />
                           <Variable x:TypeArguments="x:String" Name="MailUser" />
@@ -307,51 +305,15 @@
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <If Condition="[Convert.ToInt32(in_Config(&quot;LoginRetry&quot;)) &gt; 0]" DisplayName="Validate number of attempts" sap:VirtualizedContainerService.HintSize="653,423" sap2010:WorkflowViewState.IdRef="If_3">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <If.Then>
-                            <Sequence sap:VirtualizedContainerService.HintSize="304,214" sap2010:WorkflowViewState.IdRef="Sequence_10">
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                              <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_2">
-                                <Assign.To>
-                                  <OutArgument x:TypeArguments="x:String">[ExceptionID]</OutArgument>
-                                </Assign.To>
-                                <Assign.Value>
-                                  <InArgument x:TypeArguments="x:String">B1</InArgument>
-                                </Assign.Value>
-                              </Assign>
-                              <Throw DisplayName="Exception B1 Error" Exception="[new BusinessRuleException(&quot;Cannot acces Fannie Mae portal&quot;)]" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
-                            </Sequence>
-                          </If.Then>
-                          <If.Else>
-                            <Sequence sap:VirtualizedContainerService.HintSize="304,276" sap2010:WorkflowViewState.IdRef="Sequence_11">
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                              <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_3">
-                                <Assign.To>
-                                  <OutArgument x:TypeArguments="x:String">[ExceptionID]</OutArgument>
-                                </Assign.To>
-                                <Assign.Value>
-                                  <InArgument x:TypeArguments="x:String">B2</InArgument>
-                                </Assign.Value>
-                              </Assign>
-                              <ui:SetAsset TimeoutMS="{x:Null}" AssetName="[in_Config(&quot;SetLoginRetry&quot;).ToString]" DisplayName="Set Asset" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="SetAsset_2" Value="[1]" />
-                              <Throw DisplayName="Exception B2 Error" Exception="[new BusinessRuleException(&quot;Cannot acces Fannie Mae portal&quot;)]" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="Throw_3" />
-                            </Sequence>
-                          </If.Else>
-                        </If>
+                        <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[ExceptionID]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">B1</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <Throw DisplayName="Exception B1 Error" Exception="[new BusinessRuleException(&quot;Cannot acces Fannie Mae portal&quot;)]" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
                       </Sequence>
                     </If.Else>
                   </If>
@@ -393,30 +355,14 @@
                   </sap:WorkflowViewStateService.ViewState>
                   <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Send_Email workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Utils\Send_Email.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
-                      <InArgument x:TypeArguments="x:String" x:Key="in_CredentialAsset">
-                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;SmtpCredentials&quot;).ToString" />
-                      </InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="in_Body">
-                        <Literal x:TypeArguments="x:String">Cannot access investor portal.&lt;br&gt;&lt;br&gt;- Bot.</Literal>
-                      </InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="in_Subject">
-                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="String.Format(&quot;Fannie Mae Investor Secondary Marketing Log {0} Cannot acces Investor portal&quot;,DateTime.Now.ToString(&quot;MM-dd-yy&quot;))" />
-                      </InArgument>
-                      <InArgument x:TypeArguments="x:Int32" x:Key="in_Port">
-                        <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="Convert.ToInt32(in_Config(&quot;SmtpPort&quot;))" />
-                      </InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="in_Server">
-                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;SmtpServer&quot;).ToString" />
-                      </InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="in_Recipient">
-                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;SmtpRecipient&quot;).ToString" />
-                      </InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="in_From">
-                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;SmtpFrom&quot;).ToString" />
-                      </InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="in_Name">
-                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;SmtpName&quot;).ToString" />
-                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_CredentialAsset">[in_Config("SmtpCredentials").ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_Body">Cannot access investor portal.&lt;br&gt;&lt;br&gt;- Bot.</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_Subject">[String.Format("Fannie Mae Investor Secondary Marketing Log {0} Cannot acces Investor portal",DateTime.Now.ToString("MM-dd-yy"))]</InArgument>
+                      <InArgument x:TypeArguments="x:Int32" x:Key="in_Port">[Convert.ToInt32(in_Config("SmtpPort"))]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_Server">[in_Config("SmtpServer").ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_Recipient">[in_Config("SmtpRecipient").ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_From">[in_Config("SmtpFrom").ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_Name">[in_Config("SmtpName").ToString]</InArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                   </ui:InvokeWorkflowFile>
                   <Throw Exception="[new BusinessRuleException(exception.ToString)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_6" />
@@ -435,30 +381,14 @@
                 </sap:WorkflowViewStateService.ViewState>
                 <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Send_Email workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Utils\Send_Email.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_CredentialAsset">
-                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;SmtpCredentials&quot;).ToString" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_Body">
-                      <Literal x:TypeArguments="x:String">Login to investor portal failed&lt;br&gt;&lt;br&gt;- Bot.</Literal>
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_Subject">
-                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="String.Format(&quot;Fannie Mae Investor Secondary Marketing Log {0} Login to investor portal failed&quot;,DateTime.Now.ToString(&quot;MM-dd-yy&quot;))" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:Int32" x:Key="in_Port">
-                      <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="Convert.ToInt32(in_Config(&quot;SmtpPort&quot;))" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_Server">
-                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;SmtpServer&quot;).ToString" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_Recipient">
-                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;SmtpRecipient&quot;).ToString" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_From">
-                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;SmtpFrom&quot;).ToString" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_Name">
-                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;SmtpName&quot;).ToString" />
-                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_CredentialAsset">[in_Config("SmtpCredentials").ToString]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_Body">Login to investor portal failed&lt;br&gt;&lt;br&gt;- Bot.</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_Subject">[String.Format("Fannie Mae Investor Secondary Marketing Log {0} Login to investor portal failed",DateTime.Now.ToString("MM-dd-yy"))]</InArgument>
+                    <InArgument x:TypeArguments="x:Int32" x:Key="in_Port">[Convert.ToInt32(in_Config("SmtpPort"))]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_Server">[in_Config("SmtpServer").ToString]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_Recipient">[in_Config("SmtpRecipient").ToString]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_From">[in_Config("SmtpFrom").ToString]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_Name">[in_Config("SmtpName").ToString]</InArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
                 <Throw Exception="[new BusinessRuleException(exception.ToString)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_4" />
@@ -475,30 +405,14 @@
                 </sap:WorkflowViewStateService.ViewState>
                 <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Send_Email workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Utils\Send_Email.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_CredentialAsset">
-                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;SmtpCredentials&quot;).ToString" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_Body">
-                      <Literal x:TypeArguments="x:String">Cannot access investor portal, please intervene to fix problem.&lt;br&gt;&lt;br&gt;- Bot.</Literal>
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_Subject">
-                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="String.Format(&quot;Fannie Mae Investor Secondary Marketing Log {0} Cannot acces Investor portal&quot;,DateTime.Now.ToString(&quot;MM-dd-yy&quot;))" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:Int32" x:Key="in_Port">
-                      <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="Convert.ToInt32(in_Config(&quot;SmtpPort&quot;))" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_Server">
-                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;SmtpServer&quot;).ToString" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_Recipient">
-                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;SmtpRecipient&quot;).ToString" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_From">
-                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;SmtpFrom&quot;).ToString" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_Name">
-                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;SmtpName&quot;).ToString" />
-                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_CredentialAsset">[in_Config("SmtpCredentials").ToString]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_Body">Cannot access investor portal, please intervene to fix problem.&lt;br&gt;&lt;br&gt;- Bot.</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_Subject">[String.Format("Fannie Mae Investor Secondary Marketing Log {0} Cannot acces Investor portal",DateTime.Now.ToString("MM-dd-yy"))]</InArgument>
+                    <InArgument x:TypeArguments="x:Int32" x:Key="in_Port">[Convert.ToInt32(in_Config("SmtpPort"))]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_Server">[in_Config("SmtpServer").ToString]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_Recipient">[in_Config("SmtpRecipient").ToString]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_From">[in_Config("SmtpFrom").ToString]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_Name">[in_Config("SmtpName").ToString]</InArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
                 <Throw Exception="[new BusinessRuleException(exception.ToString)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_5" />
