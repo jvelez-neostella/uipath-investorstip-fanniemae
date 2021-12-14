@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1269,1450</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1269,1512</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Download_Report_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="33">
@@ -80,7 +80,7 @@
       <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Download_Report" sap:VirtualizedContainerService.HintSize="725,1345" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Download_Report" sap:VirtualizedContainerService.HintSize="725,1407" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="BoolContainSheet" />
       <Variable x:TypeArguments="x:Boolean" Name="FileExist" />
@@ -136,6 +136,7 @@
         </ui:Click>
       </If.Then>
     </If>
+    <Delay Duration="00:00:10" sap:VirtualizedContainerService.HintSize="683,22" sap2010:WorkflowViewState.IdRef="Delay_2" />
     <Assign sap:VirtualizedContainerService.HintSize="683,60" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[io_FileDownloadedPath]</OutArgument>

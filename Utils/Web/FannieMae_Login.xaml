@@ -75,7 +75,6 @@
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="FannieMae_Login" sap:VirtualizedContainerService.HintSize="1705,2394" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -99,7 +98,7 @@
           </sap:WorkflowViewStateService.ViewState>
           <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1583,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;FannieMae_Login Starts...&quot;]" />
           <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_Config(&quot;FMCredentials&quot;).ToString]" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="1583,22" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[Password]" Username="[Username]" />
-          <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Fannie Mae WebPage" sap:VirtualizedContainerService.HintSize="1583,1659" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="[in_Config(&quot;LoginURL&quot;).ToString]">
+          <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Fannie Mae WebPage" sap:VirtualizedContainerService.HintSize="1583,1659" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" NewSession="True" Private="True" Url="[in_Config(&quot;LoginURL&quot;).ToString]">
             <ui:OpenBrowser.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
@@ -386,7 +385,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_Config(&quot;SmtpCredentials&quot;).ToString]" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="GetRobotCredential_5" Password="[MailPass]" Username="[MailUser]" />
-                <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="Cannot access investor portal, please intervene to fix problem.&#xD;&#xA;&#xD;&#xA;- Bot.&#xD;&#xA;" DisplayName="Send SMTP Mail Message" Email="[MailUser]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SendMail_4" IsBodyHtml="False" Port="[Convert.ToInt32(in_Config(&quot;SmtpPort&quot;))]" SecureConnection="Auto" SecurePassword="[MailPass]" Server="[in_Config(&quot;SmtpServer&quot;).ToString]" Subject="[String.Format(&quot;Fannie Mae Investor Secondary Marketing Log {0} Cannot acces Investor portal&quot;,DateTime.Now.ToString(&quot;MM-dd-yy&quot;))]" To="[in_Config(&quot;SmtpRecipient&quot;).ToString]">
+                <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="Cannot access investor portal, please intervene to fix problem.&#xA;&#xA;- Bot.&#xA;" DisplayName="Send SMTP Mail Message" Email="[MailUser]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SendMail_4" IsBodyHtml="False" Port="[Convert.ToInt32(in_Config(&quot;SmtpPort&quot;))]" SecureConnection="Auto" SecurePassword="[MailPass]" Server="[in_Config(&quot;SmtpServer&quot;).ToString]" Subject="[String.Format(&quot;Fannie Mae Investor Secondary Marketing Log {0} Cannot acces Investor portal&quot;,DateTime.Now.ToString(&quot;MM-dd-yy&quot;))]" To="[in_Config(&quot;SmtpRecipient&quot;).ToString]">
                   <ui:SendMail.Files>
                     <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                   </ui:SendMail.Files>
