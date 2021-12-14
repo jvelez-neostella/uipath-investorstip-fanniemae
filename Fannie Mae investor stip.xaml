@@ -57,6 +57,7 @@
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Flowchart DisplayName="Fannie Mae investor stip" sap:VirtualizedContainerService.HintSize="1648,682" sap2010:WorkflowViewState.IdRef="Flowchart_1">
@@ -96,29 +97,16 @@
         </sap:WorkflowViewStateService.ViewState>
         <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke InitAllSettings workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Framework\InitAllSettings.xaml">
           <ui:InvokeWorkflowFile.Arguments>
-            <InArgument x:TypeArguments="x:String" x:Key="in_ConfigFile">
-              <Literal x:TypeArguments="x:String">Data\Config.xlsx</Literal>
-            </InArgument>
-            <InArgument x:TypeArguments="s:String[]" x:Key="in_ConfigSheets">
-              <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="{}{&quot;Settings&quot;, &quot;Constants&quot;}" />
-            </InArgument>
-            <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="out_Config">
-              <mva:VisualBasicReference x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="Config" />
-            </OutArgument>
-            <OutArgument x:TypeArguments="x:String" x:Key="out_ErrorReportPath">
-              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="ErrorReportPath" />
-            </OutArgument>
-            <InOutArgument x:TypeArguments="x:Boolean" x:Key="io_InitProcess">
-              <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="InitProcess" />
-            </InOutArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="in_ConfigFile">Data\Config.xlsx</InArgument>
+            <InArgument x:TypeArguments="s:String[]" x:Key="in_ConfigSheets">[{"Settings", "Constants"}]</InArgument>
+            <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="out_Config">[Config]</OutArgument>
+            <OutArgument x:TypeArguments="x:String" x:Key="out_ErrorReportPath">[ErrorReportPath]</OutArgument>
+            <InOutArgument x:TypeArguments="x:Boolean" x:Key="io_InitProcess">[InitProcess]</InOutArgument>
           </ui:InvokeWorkflowFile.Arguments>
         </ui:InvokeWorkflowFile>
       </Sequence>
       <FlowStep.Next>
-        <FlowDecision x:Name="__ReferenceID0" DisplayName="Init sucessful?" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
-          <FlowDecision.Condition>
-            <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="InitProcess" />
-          </FlowDecision.Condition>
+        <FlowDecision x:Name="__ReferenceID0" Condition="[InitProcess]" DisplayName="Init sucessful?" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -145,12 +133,8 @@
                 </sap:WorkflowViewStateService.ViewState>
                 <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Get_ReportEntity workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Utils\Get_ReportEntity.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
-                    <OutArgument x:TypeArguments="scg:IList(f:SMReportInformation)" x:Key="out_ReportsInformation">
-                      <mva:VisualBasicReference x:TypeArguments="scg:IList(f:SMReportInformation)" ExpressionText="ReportsInformation" />
-                    </OutArgument>
-                    <OutArgument x:TypeArguments="scg:IList(f:SMReportInformation)" x:Key="out_SRPReportsInformation">
-                      <mva:VisualBasicReference x:TypeArguments="scg:IList(f:SMReportInformation)" ExpressionText="SRPReportsInformation" />
-                    </OutArgument>
+                    <OutArgument x:TypeArguments="scg:IList(f:SMReportInformation)" x:Key="out_ReportsInformation">[ReportsInformation]</OutArgument>
+                    <OutArgument x:TypeArguments="scg:IList(f:SMReportInformation)" x:Key="out_SRPReportsInformation">[SRPReportsInformation]</OutArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
               </Sequence>
@@ -184,7 +168,7 @@
                           <av:PointCollection x:Key="ConnectorLocation">690,330 710,330</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Sequence DisplayName="Get Report Information" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                      <Sequence DisplayName="Get Report Information" sap:VirtualizedContainerService.HintSize="376,204" sap2010:WorkflowViewState.IdRef="Sequence_5">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -192,8 +176,15 @@
                         </sap:WorkflowViewStateService.ViewState>
                         <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke FannieMae_GetReport workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Utils\Web\FannieMae_GetReport.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
-                            <InArgument x:TypeArguments="scg:IList(f:SMReportInformation)" x:Key="in_ReportInformation">[ReportsInformation]</InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_ErrorReportPath">[ErrorReportPath]</InArgument>
+                            <InArgument x:TypeArguments="scg:IList(f:SMReportInformation)" x:Key="in_ReportInformation">
+                              <mva:VisualBasicValue x:TypeArguments="scg:IList(f:SMReportInformation)" ExpressionText="ReportsInformation" />
+                            </InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_ErrorReportPath">
+                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="ErrorReportPath" />
+                            </InArgument>
+                            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
+                              <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="Config" />
+                            </InArgument>
                           </ui:InvokeWorkflowFile.Arguments>
                         </ui:InvokeWorkflowFile>
                       </Sequence>
