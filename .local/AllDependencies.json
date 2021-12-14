@@ -4739,15 +4739,15 @@
     ]
   },
   "packageFolders": {
-    "D:\\Users\\nsbotprod1\\.nuget\\packages\\": {}
+    "D:\\Users\\nsbotprod9\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "uipath-investorstip-fanniemae",
       "projectName": "uipath-investorstip-fanniemae",
-      "projectPath": "D:\\Users\\nsbotprod1\\Desktop\\Projects\\wyndham-secondary-marketing-fanniemae\\.local",
-      "packagesPath": "D:\\Users\\nsbotprod1\\.nuget\\packages\\",
-      "outputPath": "D:\\Users\\nsbotprod1\\Desktop\\Projects\\wyndham-secondary-marketing-fanniemae\\.local"
+      "projectPath": "D:\\Users\\nsbotprod9\\Documents\\GitHub\\wyndham-secondary-marketing-fanniemae\\.local",
+      "packagesPath": "D:\\Users\\nsbotprod9\\.nuget\\packages\\",
+      "outputPath": "D:\\Users\\nsbotprod9\\Documents\\GitHub\\wyndham-secondary-marketing-fanniemae\\.local"
     },
     "frameworks": {
       "net461": {
@@ -4780,5 +4780,14 @@
         }
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU3034",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Newtonsoft.Json 13.0.1' from source 'https://api.nuget.org/v3/index.json': This package is signed but not by a trusted signer.",
+      "libraryId": "Newtonsoft.Json"
+    }
+  ]
 }
