@@ -2,49 +2,6 @@
   "version": 3,
   "targets": {
     ".NETFramework,Version=v4.6.1": {
-      "AForge/2.2.5": {
-        "type": "package",
-        "compile": {
-          "lib/_._": {}
-        },
-        "runtime": {
-          "lib/AForge.dll": {}
-        }
-      },
-      "AForge.Imaging/2.2.5": {
-        "type": "package",
-        "dependencies": {
-          "AForge": "2.2.5",
-          "AForge.Math": "2.2.5"
-        },
-        "compile": {
-          "lib/_._": {}
-        },
-        "runtime": {
-          "lib/AForge.Imaging.dll": {}
-        }
-      },
-      "AForge.Math/2.2.5": {
-        "type": "package",
-        "dependencies": {
-          "AForge": "2.2.5"
-        },
-        "compile": {
-          "lib/_._": {}
-        },
-        "runtime": {
-          "lib/AForge.Math.dll": {}
-        }
-      },
-      "AvalonEdit/5.0.3": {
-        "type": "package",
-        "compile": {
-          "lib/Net40/_._": {}
-        },
-        "runtime": {
-          "lib/Net40/ICSharpCode.AvalonEdit.dll": {}
-        }
-      },
       "ClosedXML/0.87.1": {
         "type": "package",
         "dependencies": {
@@ -57,13 +14,17 @@
           "lib/net40/ClosedXML.dll": {}
         }
       },
-      "CsvHelper/2.13.5": {
+      "CsvHelper/16.0.0": {
         "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.5.0",
+          "System.ValueTuple": "4.4.0"
+        },
         "compile": {
-          "lib/net40-client/_._": {}
+          "lib/net45/_._": {}
         },
         "runtime": {
-          "lib/net40-client/CsvHelper.dll": {}
+          "lib/net45/CsvHelper.dll": {}
         }
       },
       "DocumentFormat.OpenXml/2.5.0": {
@@ -73,54 +34,6 @@
         },
         "runtime": {
           "lib/DocumentFormat.OpenXml.dll": {}
-        }
-      },
-      "Extended.Wpf.Toolkit/3.8.1": {
-        "type": "package",
-        "compile": {
-          "lib/net40/_._": {}
-        },
-        "runtime": {
-          "lib/net40/Xceed.Wpf.AvalonDock.Themes.Aero.dll": {},
-          "lib/net40/Xceed.Wpf.AvalonDock.Themes.Metro.dll": {},
-          "lib/net40/Xceed.Wpf.AvalonDock.Themes.VS2010.dll": {},
-          "lib/net40/Xceed.Wpf.AvalonDock.dll": {},
-          "lib/net40/Xceed.Wpf.Toolkit.dll": {}
-        },
-        "resource": {
-          "lib/net40/cs-CZ/Xceed.Wpf.AvalonDock.resources.dll": {
-            "locale": "cs-CZ"
-          },
-          "lib/net40/de/Xceed.Wpf.AvalonDock.resources.dll": {
-            "locale": "de"
-          },
-          "lib/net40/es/Xceed.Wpf.AvalonDock.resources.dll": {
-            "locale": "es"
-          },
-          "lib/net40/fr/Xceed.Wpf.AvalonDock.resources.dll": {
-            "locale": "fr"
-          },
-          "lib/net40/hu/Xceed.Wpf.AvalonDock.resources.dll": {
-            "locale": "hu"
-          },
-          "lib/net40/it/Xceed.Wpf.AvalonDock.resources.dll": {
-            "locale": "it"
-          },
-          "lib/net40/pt-BR/Xceed.Wpf.AvalonDock.resources.dll": {
-            "locale": "pt-BR"
-          },
-          "lib/net40/ro/Xceed.Wpf.AvalonDock.resources.dll": {
-            "locale": "ro"
-          },
-          "lib/net40/ru/Xceed.Wpf.AvalonDock.resources.dll": {
-            "locale": "ru"
-          },
-          "lib/net40/sv/Xceed.Wpf.AvalonDock.resources.dll": {
-            "locale": "sv"
-          },
-          "lib/net40/zh-Hans/Xceed.Wpf.AvalonDock.resources.dll": {
-            "locale": "zh-Hans"
-          }
         }
       },
       "Google.Apis/1.43.0": {
@@ -209,15 +122,6 @@
         },
         "runtime": {
           "lib/net45/Google.Apis.PeopleService.v1.dll": {}
-        }
-      },
-      "Humanizer.Core/2.4.2": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/_._": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Humanizer.dll": {}
         }
       },
       "MailKit/2.10.0": {
@@ -377,6 +281,18 @@
         },
         "runtime": {
           "lib/net461/Microsoft.Bcl.AsyncInterfaces.dll": {}
+        }
+      },
+      "Microsoft.CSharp/4.5.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp"
+        ],
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
         }
       },
       "Microsoft.Exchange.WebServices/2.2.0": {
@@ -570,13 +486,13 @@
           "lib/net461/Microsoft.Rest.ClientRuntime.dll": {}
         }
       },
-      "Microsoft.VisualStudio.OLE.Interop/7.10.6071": {
+      "Microsoft.VisualStudio.OLE.Interop/16.7.30328.74": {
         "type": "package",
         "compile": {
-          "lib/_._": {}
+          "lib/net45/_._": {}
         },
         "runtime": {
-          "lib/Microsoft.VisualStudio.OLE.Interop.dll": {}
+          "lib/net45/Microsoft.VisualStudio.OLE.Interop.dll": {}
         }
       },
       "Microsoft.Web.WebView2/1.0.705.50": {
@@ -631,6 +547,31 @@
         },
         "runtime": {
           "lib/net46/MimeKit.dll": {}
+        }
+      },
+      "Neostella.General.Utilities/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "UiPath.Excel.Activities": "2.10.4",
+          "UiPath.Mail.Activities": "1.10.5",
+          "UiPath.Python.Activities": "1.4.1",
+          "UiPath.System.Activities": "21.4.1",
+          "UiPath.UIAutomation.Activities": "21.4.4"
+        },
+        "compile": {
+          "lib/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/Neostella.General Utilities.dll": {},
+          "lib/net45/Neostella.General Utilities_Expressions_17480378.dll": {},
+          "lib/net45/Neostella.General Utilities_Expressions_34580779.dll": {},
+          "lib/net45/Neostella.General Utilities_Expressions_36097706.dll": {},
+          "lib/net45/Neostella.General Utilities_Expressions_41997141.dll": {},
+          "lib/net45/Neostella.General Utilities_Expressions_52384459.dll": {},
+          "lib/net45/Neostella.General Utilities_Expressions_52435195.dll": {},
+          "lib/net45/Neostella.General Utilities_Expressions_56883331.dll": {},
+          "lib/net45/Neostella.General Utilities_Expressions_56944144.dll": {},
+          "lib/net45/Neostella.General Utilities_Expressions_59609054.dll": {}
         }
       },
       "Newtonsoft.Json/13.0.1": {
@@ -747,27 +688,6 @@
           "lib/net461/Nito.Disposables.dll": {}
         }
       },
-      "NLog/4.5.11": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "Microsoft.CSharp",
-          "System",
-          "System.Configuration",
-          "System.Core",
-          "System.Data",
-          "System.IO.Compression",
-          "System.Runtime.Serialization",
-          "System.ServiceModel",
-          "System.Transactions",
-          "System.Xml"
-        ],
-        "compile": {
-          "lib/net45/_._": {}
-        },
-        "runtime": {
-          "lib/net45/NLog.dll": {}
-        }
-      },
       "NPOI/2.4.1": {
         "type": "package",
         "dependencies": {
@@ -813,7 +733,7 @@
           "lib/net461/System.Buffers.dll": {}
         }
       },
-      "System.Collections.Immutable/1.5.0": {
+      "System.Collections.Immutable/1.4.0": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/_._": {}
@@ -872,6 +792,15 @@
         },
         "runtime": {
           "lib/netstandard2.0/System.IO.Pipelines.dll": {}
+        }
+      },
+      "System.Management.Automation/6.1.7601.17515": {
+        "type": "package",
+        "compile": {
+          "lib/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/System.Management.Automation.dll": {}
         }
       },
       "System.Memory/4.5.4": {
@@ -1059,13 +988,13 @@
           "lib/net461/System.ValueTuple.dll": {}
         }
       },
-      "UiPath/20.10.7585.27318": {
+      "UiPath/21.4.25.3292": {
         "type": "package",
         "compile": {
-          "lib/_._": {}
+          "lib/net45/_._": {}
         },
         "runtime": {
-          "lib/UiPath.Interop.dll": {}
+          "lib/net45/UiPath.Interop.dll": {}
         },
         "build": {
           "build/_._": {}
@@ -1147,21 +1076,26 @@
           }
         }
       },
-      "UiPath.Excel.Activities/2.9.3": {
+      "UiPath.Excel.Activities/2.10.4": {
         "type": "package",
         "dependencies": {
           "ClosedXML": "0.87.1",
-          "CsvHelper": "2.13.5",
+          "CsvHelper": "15.0.5",
           "DocumentFormat.OpenXml": "2.5.0",
-          "Microsoft.VisualStudio.OLE.Interop": "7.10.6071",
+          "Microsoft.VisualStudio.OLE.Interop": "16.7.30328.74",
           "NPOI": "2.4.1",
           "SharpZipLib": "1.0.0"
         },
+        "frameworkAssemblies": [
+          "System.Activities",
+          "System.Activities.Presentation"
+        ],
         "compile": {
           "lib/net461/_._": {}
         },
         "runtime": {
           "lib/net461/UiPath.Excel.Activities.Design.dll": {},
+          "lib/net461/UiPath.Excel.Activities.Package.dll": {},
           "lib/net461/UiPath.Excel.Activities.dll": {},
           "lib/net461/UiPath.Excel.dll": {}
         },
@@ -1400,15 +1334,10 @@
           }
         }
       },
-      "UiPath.OCR.Activities/2.4.0": {
+      "UiPath.OCR.Activities/3.0.0": {
         "type": "package",
         "dependencies": {
-          "AForge.Imaging": "2.2.5",
-          "NLog": "4.5.11",
-          "Newtonsoft.Json": "11.0.2",
-          "System.Collections.Immutable": "1.5.0",
-          "System.ValueTuple": "4.5.0",
-          "UiPath.OCR.Contracts": "2.7.1"
+          "UiPath.OCR.Contracts": "2.7.3"
         },
         "compile": {
           "lib/net461/_._": {}
@@ -1487,8 +1416,11 @@
           }
         }
       },
-      "UiPath.OCR.Contracts/2.7.1": {
+      "UiPath.OCR.Contracts/2.7.3": {
         "type": "package",
+        "frameworkAssemblies": [
+          "System.Activities"
+        ],
         "compile": {
           "lib/net461/_._": {}
         },
@@ -1513,37 +1445,135 @@
           "lib/net461/UiPath.Platform.dll": {}
         }
       },
-      "UiPath.System.Activities/20.10.1": {
+      "UiPath.Python.Activities/1.4.1": {
+        "type": "package",
+        "compile": {
+          "lib/net461/_._": {}
+        },
+        "runtime": {
+          "lib/net461/UiPath.Python.Activities.Design.dll": {},
+          "lib/net461/UiPath.Python.Activities.dll": {},
+          "lib/net461/UiPath.Python.dll": {}
+        },
+        "resource": {
+          "lib/net461/de/UiPath.Python.Activities.Design.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net461/de/UiPath.Python.Activities.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net461/de/UiPath.Python.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net461/es-MX/UiPath.Python.Activities.Design.resources.dll": {
+            "locale": "es-MX"
+          },
+          "lib/net461/es-MX/UiPath.Python.Activities.resources.dll": {
+            "locale": "es-MX"
+          },
+          "lib/net461/es-MX/UiPath.Python.resources.dll": {
+            "locale": "es-MX"
+          },
+          "lib/net461/es/UiPath.Python.Activities.Design.resources.dll": {
+            "locale": "es"
+          },
+          "lib/net461/es/UiPath.Python.Activities.resources.dll": {
+            "locale": "es"
+          },
+          "lib/net461/es/UiPath.Python.resources.dll": {
+            "locale": "es"
+          },
+          "lib/net461/fr/UiPath.Python.Activities.Design.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net461/fr/UiPath.Python.Activities.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net461/fr/UiPath.Python.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net461/ja/UiPath.Python.Activities.Design.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/net461/ja/UiPath.Python.Activities.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/net461/ja/UiPath.Python.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/net461/ko/UiPath.Python.Activities.Design.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/net461/ko/UiPath.Python.Activities.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/net461/ko/UiPath.Python.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/net461/pt-BR/UiPath.Python.Activities.Design.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net461/pt-BR/UiPath.Python.Activities.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net461/pt-BR/UiPath.Python.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net461/pt/UiPath.Python.Activities.Design.resources.dll": {
+            "locale": "pt"
+          },
+          "lib/net461/pt/UiPath.Python.Activities.resources.dll": {
+            "locale": "pt"
+          },
+          "lib/net461/pt/UiPath.Python.resources.dll": {
+            "locale": "pt"
+          },
+          "lib/net461/ru/UiPath.Python.Activities.Design.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/net461/ru/UiPath.Python.Activities.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/net461/ru/UiPath.Python.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/net461/tr/UiPath.Python.Activities.Design.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/net461/tr/UiPath.Python.Activities.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/net461/tr/UiPath.Python.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/net461/zh-CN/UiPath.Python.Activities.Design.resources.dll": {
+            "locale": "zh-CN"
+          },
+          "lib/net461/zh-CN/UiPath.Python.Activities.resources.dll": {
+            "locale": "zh-CN"
+          },
+          "lib/net461/zh-CN/UiPath.Python.resources.dll": {
+            "locale": "zh-CN"
+          }
+        }
+      },
+      "UiPath.System.Activities/21.4.1": {
         "type": "package",
         "dependencies": {
-          "CsvHelper": "2.13.5",
+          "CsvHelper": "16.0.0",
           "Microsoft.AspNet.SignalR.Client": "2.4.0",
           "Microsoft.AspNetCore.SignalR.Client": "3.1.6",
-          "Microsoft.Bcl.AsyncInterfaces": "1.1.1",
           "Microsoft.Rest.ClientRuntime": "2.3.21",
           "Newtonsoft.Json": "11.0.2",
           "SharpZipLib": "1.2.0",
-          "System.Buffers": "4.5.1",
-          "System.Memory": "4.5.4",
-          "System.Numerics.Vectors": "4.5.0",
-          "System.Runtime.CompilerServices.Unsafe": "4.7.1",
-          "System.Threading.Tasks.Extensions": "4.5.4",
-          "UiPath.Platform": "20.10.4"
+          "System.Management.Automation": "6.1.7601.17515",
+          "UiPath.Platform": "21.4.0",
+          "UiPath.Telemetry.Client": "1.3.18"
         },
         "compile": {
           "lib/net461/_._": {}
         },
         "runtime": {
-          "lib/net461/ActiproSoftware.Docking.Wpf.dll": {},
-          "lib/net461/ActiproSoftware.Ribbon.Wpf.dll": {},
-          "lib/net461/ActiproSoftware.Shared.Wpf.dll": {},
-          "lib/net461/ActiproSoftware.SyntaxEditor.Addons.DotNet.Wpf.dll": {},
-          "lib/net461/ActiproSoftware.SyntaxEditor.Wpf.dll": {},
-          "lib/net461/ActiproSoftware.Text.Addons.DotNet.Wpf.dll": {},
-          "lib/net461/ActiproSoftware.Text.LLParser.Wpf.dll": {},
-          "lib/net461/ActiproSoftware.Text.Wpf.dll": {},
-          "lib/net461/ActiproSoftware.Wizard.Wpf.dll": {},
-          "lib/net461/CustomInputForm.exe": {},
           "lib/net461/UiPath.OrchestratorClient.dll": {},
           "lib/net461/UiPath.System.Activities.Design.dll": {},
           "lib/net461/UiPath.System.Activities.dll": {}
@@ -1555,10 +1585,16 @@
           "lib/net461/de/UiPath.System.Activities.resources.dll": {
             "locale": "de"
           },
+          "lib/net461/de/WorkerProcess.resources.dll": {
+            "locale": "de"
+          },
           "lib/net461/es-MX/UiPath.System.Activities.Design.resources.dll": {
             "locale": "es-MX"
           },
           "lib/net461/es-MX/UiPath.System.Activities.resources.dll": {
+            "locale": "es-MX"
+          },
+          "lib/net461/es-MX/WorkerProcess.resources.dll": {
             "locale": "es-MX"
           },
           "lib/net461/es/UiPath.System.Activities.Design.resources.dll": {
@@ -1567,10 +1603,16 @@
           "lib/net461/es/UiPath.System.Activities.resources.dll": {
             "locale": "es"
           },
+          "lib/net461/es/WorkerProcess.resources.dll": {
+            "locale": "es"
+          },
           "lib/net461/fr/UiPath.System.Activities.Design.resources.dll": {
             "locale": "fr"
           },
           "lib/net461/fr/UiPath.System.Activities.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net461/fr/WorkerProcess.resources.dll": {
             "locale": "fr"
           },
           "lib/net461/ja/UiPath.System.Activities.Design.resources.dll": {
@@ -1579,10 +1621,16 @@
           "lib/net461/ja/UiPath.System.Activities.resources.dll": {
             "locale": "ja"
           },
+          "lib/net461/ja/WorkerProcess.resources.dll": {
+            "locale": "ja"
+          },
           "lib/net461/ko/UiPath.System.Activities.Design.resources.dll": {
             "locale": "ko"
           },
           "lib/net461/ko/UiPath.System.Activities.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/net461/ko/WorkerProcess.resources.dll": {
             "locale": "ko"
           },
           "lib/net461/pt-BR/UiPath.System.Activities.Design.resources.dll": {
@@ -1591,10 +1639,16 @@
           "lib/net461/pt-BR/UiPath.System.Activities.resources.dll": {
             "locale": "pt-BR"
           },
+          "lib/net461/pt-BR/WorkerProcess.resources.dll": {
+            "locale": "pt-BR"
+          },
           "lib/net461/pt/UiPath.System.Activities.Design.resources.dll": {
             "locale": "pt"
           },
           "lib/net461/pt/UiPath.System.Activities.resources.dll": {
+            "locale": "pt"
+          },
+          "lib/net461/pt/WorkerProcess.resources.dll": {
             "locale": "pt"
           },
           "lib/net461/ru/UiPath.System.Activities.Design.resources.dll": {
@@ -1603,16 +1657,25 @@
           "lib/net461/ru/UiPath.System.Activities.resources.dll": {
             "locale": "ru"
           },
+          "lib/net461/ru/WorkerProcess.resources.dll": {
+            "locale": "ru"
+          },
           "lib/net461/tr/UiPath.System.Activities.Design.resources.dll": {
             "locale": "tr"
           },
           "lib/net461/tr/UiPath.System.Activities.resources.dll": {
             "locale": "tr"
           },
+          "lib/net461/tr/WorkerProcess.resources.dll": {
+            "locale": "tr"
+          },
           "lib/net461/zh-CN/UiPath.System.Activities.Design.resources.dll": {
             "locale": "zh-CN"
           },
           "lib/net461/zh-CN/UiPath.System.Activities.resources.dll": {
+            "locale": "zh-CN"
+          },
+          "lib/net461/zh-CN/WorkerProcess.resources.dll": {
             "locale": "zh-CN"
           }
         }
@@ -1631,40 +1694,27 @@
           "lib/net461/TelemetryClient.dll": {}
         }
       },
-      "UiPath.UIAutomation.Activities/20.10.6": {
+      "UiPath.UIAutomation.Activities/21.4.4": {
         "type": "package",
         "dependencies": {
-          "AvalonEdit": "5.0.3",
-          "Extended.Wpf.Toolkit": "3.8.1",
-          "Humanizer.Core": "2.4.2",
           "Newtonsoft.Json": "11.0.2",
           "System.IO.Abstractions": "3.0.10",
-          "UiPath": "[20.10.7585.27318]",
-          "UiPath.OCR.Activities": "2.4.0",
-          "UiPath.OCR.Contracts": "2.7.1",
-          "UiPath.Platform": "20.10.4",
-          "UiPath.Telemetry.Client": "1.2.20",
-          "UiPath.Vision": "2.2.0"
+          "UiPath": "[21.4.25.3292]",
+          "UiPath.OCR.Activities": "3.0.0",
+          "UiPath.OCR.Contracts": "2.7.3",
+          "UiPath.Platform": "21.4.0",
+          "UiPath.Telemetry.Client": "1.3.18",
+          "UiPath.Vision": "3.0.1"
         },
         "compile": {
           "lib/net461/_._": {}
         },
         "runtime": {
-          "lib/net461/ActiproSoftware.DataGrid.Contrib.Wpf.dll": {},
-          "lib/net461/ActiproSoftware.Docking.Wpf.dll": {},
-          "lib/net461/ActiproSoftware.Editors.Wpf.dll": {},
-          "lib/net461/ActiproSoftware.Ribbon.Wpf.dll": {},
-          "lib/net461/ActiproSoftware.Shared.Wpf.dll": {},
-          "lib/net461/ActiproSoftware.SyntaxEditor.Addons.DotNet.Wpf.dll": {},
-          "lib/net461/ActiproSoftware.SyntaxEditor.Wpf.dll": {},
-          "lib/net461/ActiproSoftware.Text.Addons.DotNet.Wpf.dll": {},
-          "lib/net461/ActiproSoftware.Text.LLParser.Wpf.dll": {},
-          "lib/net461/ActiproSoftware.Text.Wpf.dll": {},
-          "lib/net461/ActiproSoftware.Wizard.Wpf.dll": {},
           "lib/net461/UiPath.CV.Activities.Design.dll": {},
           "lib/net461/UiPath.CV.Activities.dll": {},
           "lib/net461/UiPath.CV.dll": {},
           "lib/net461/UiPath.UIAutomation.Activities.Design.dll": {},
+          "lib/net461/UiPath.UIAutomation.Activities.Package.dll": {},
           "lib/net461/UiPath.UIAutomationCore.dll": {},
           "lib/net461/UiPath.UIAutomationNext.Activities.Design.dll": {},
           "lib/net461/UiPath.UIAutomationNext.Activities.dll": {},
@@ -1913,102 +1963,52 @@
           "lib/net461/tr/UiPath.Wizards.resources.dll": {
             "locale": "tr"
           },
-          "lib/net461/zh-cn/UiPath.CV.Activities.Design.resources.dll": {
-            "locale": "zh-cn"
+          "lib/net461/zh-CN/UiPath.CV.Activities.Design.resources.dll": {
+            "locale": "zh-CN"
           },
-          "lib/net461/zh-cn/UiPath.CV.Activities.resources.dll": {
-            "locale": "zh-cn"
+          "lib/net461/zh-CN/UiPath.CV.Activities.resources.dll": {
+            "locale": "zh-CN"
           },
-          "lib/net461/zh-cn/UiPath.CV.resources.dll": {
-            "locale": "zh-cn"
+          "lib/net461/zh-CN/UiPath.CV.resources.dll": {
+            "locale": "zh-CN"
           },
-          "lib/net461/zh-cn/UiPath.UIAutomation.Activities.Design.resources.dll": {
-            "locale": "zh-cn"
+          "lib/net461/zh-CN/UiPath.UIAutomation.Activities.Design.resources.dll": {
+            "locale": "zh-CN"
           },
-          "lib/net461/zh-cn/UiPath.UIAutomationNext.Activities.Design.resources.dll": {
-            "locale": "zh-cn"
+          "lib/net461/zh-CN/UiPath.UIAutomationNext.Activities.Design.resources.dll": {
+            "locale": "zh-CN"
           },
-          "lib/net461/zh-cn/UiPath.UIAutomationNext.resources.dll": {
-            "locale": "zh-cn"
+          "lib/net461/zh-CN/UiPath.UIAutomationNext.resources.dll": {
+            "locale": "zh-CN"
           },
-          "lib/net461/zh-cn/UiPath.UiAutomation.Activities.resources.dll": {
-            "locale": "zh-cn"
+          "lib/net461/zh-CN/UiPath.UiAutomation.Activities.resources.dll": {
+            "locale": "zh-CN"
           },
-          "lib/net461/zh-cn/UiPath.Wizards.resources.dll": {
-            "locale": "zh-cn"
+          "lib/net461/zh-CN/UiPath.Wizards.resources.dll": {
+            "locale": "zh-CN"
           }
         }
       },
-      "UiPath.Vision/2.2.0": {
+      "UiPath.Vision/3.0.1": {
         "type": "package",
         "dependencies": {
-          "UiPath.OCR.Contracts": "2.7.1"
+          "UiPath.OCR.Contracts": "2.7.3"
         },
         "compile": {
           "lib/net461/_._": {}
         },
         "runtime": {
+          "lib/net461/UiPath.Vision.AzureComputerVision.dll": {},
           "lib/net461/UiPath.Vision.Core.dll": {},
+          "lib/net461/UiPath.Vision.GoogleCloud.dll": {},
+          "lib/net461/UiPath.Vision.Microsoft.dll": {},
+          "lib/net461/UiPath.Vision.Tesseract.dll": {},
           "lib/net461/UiPath.Vision.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "AForge/2.2.5": {
-      "sha512": "clkumhM9DggqIzEXAHgVLeWO4arG5YfoPr7J4jfjJx35AoeEIJSSm49J25bwp/9mXQYLwi7y1Wunc8qgYJsGxg==",
-      "type": "package",
-      "path": "aforge/2.2.5",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "aforge.2.2.5.nupkg.sha512",
-        "aforge.nuspec",
-        "lib/AForge.dll",
-        "lib/AForge.xml"
-      ]
-    },
-    "AForge.Imaging/2.2.5": {
-      "sha512": "n8l7Zdsm89EFW9Uz4uCO3D428Gu4Q56YxixSMJPruen1c30R8R9Mm8AreTdoOi2XjN5id04JwFFlXYTk8pIIfw==",
-      "type": "package",
-      "path": "aforge.imaging/2.2.5",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "aforge.imaging.2.2.5.nupkg.sha512",
-        "aforge.imaging.nuspec",
-        "lib/AForge.Imaging.dll",
-        "lib/AForge.Imaging.xml"
-      ]
-    },
-    "AForge.Math/2.2.5": {
-      "sha512": "pmT1WobVv13vMxwXhCu8sRunxjiUHyURWS0+dsW/aBPi06xiyYIdCLHI6jph9Axb4QoLIlb85eBI6zd2EAbGIg==",
-      "type": "package",
-      "path": "aforge.math/2.2.5",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "aforge.math.2.2.5.nupkg.sha512",
-        "aforge.math.nuspec",
-        "lib/AForge.Math.dll",
-        "lib/AForge.Math.xml"
-      ]
-    },
-    "AvalonEdit/5.0.3": {
-      "sha512": "L5CgXRniZRxI/tjoBztVgZnvTL1F/qKrRJa+Q88I0Gl78WRNaqdMkuOlkAsOHTauBGZSQNDO0/X+xIpzfzmLdQ==",
-      "type": "package",
-      "path": "avalonedit/5.0.3",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "avalonedit.5.0.3.nupkg.sha512",
-        "avalonedit.nuspec",
-        "lib/Net35/ICSharpCode.AvalonEdit.dll",
-        "lib/Net35/ICSharpCode.AvalonEdit.xml",
-        "lib/Net40/ICSharpCode.AvalonEdit.dll",
-        "lib/Net40/ICSharpCode.AvalonEdit.xml"
-      ]
-    },
     "ClosedXML/0.87.1": {
       "sha512": "2LC0T8bu2G2kt34C4Ig87uZfrRO4MwMVI54e2To7m3DvwAs2Z2Ir86WQuUoW8Txo1uNGSfmu3DpfpQhSX0bIww==",
       "type": "package",
@@ -2026,27 +2026,23 @@
         "lib/net40/ClosedXML.xml"
       ]
     },
-    "CsvHelper/2.13.5": {
-      "sha512": "fC8DPi/YTcZ8uXFiAeuT9EpsR2TE5cSJ2jg/4tht/Oen6az/djebpYoCQEtI33RfNrSZ533SedOknlWtUTX3fw==",
+    "CsvHelper/16.0.0": {
+      "sha512": "ZHuVi+c8T/3ksqqCvY6nOWlJvOK+W+0Hnnlucg7lIZA6iSGQ162+998gwXxoBfSaDUp0/cDlrTMq2wnRohErOQ==",
       "type": "package",
-      "path": "csvhelper/2.13.5",
+      "path": "csvhelper/16.0.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
-        "csvhelper.2.13.5.nupkg.sha512",
+        "Icon.png",
+        "csvhelper.16.0.0.nupkg.sha512",
         "csvhelper.nuspec",
-        "lib/net20/CsvHelper.dll",
-        "lib/net20/CsvHelper.pdb",
-        "lib/net20/CsvHelper.xml",
-        "lib/net35-client/CsvHelper.dll",
-        "lib/net35-client/CsvHelper.pdb",
-        "lib/net35-client/CsvHelper.xml",
-        "lib/net40-client/CsvHelper.dll",
-        "lib/net40-client/CsvHelper.pdb",
-        "lib/net40-client/CsvHelper.xml",
-        "lib/portable-net40+sl5+win8+wpa+wp8/CsvHelper.dll",
-        "lib/portable-net40+sl5+win8+wpa+wp8/CsvHelper.pdb",
-        "lib/portable-net40+sl5+win8+wpa+wp8/CsvHelper.xml"
+        "lib/net45/CsvHelper.dll",
+        "lib/net45/CsvHelper.xml",
+        "lib/net47/CsvHelper.dll",
+        "lib/net47/CsvHelper.xml",
+        "lib/netstandard2.0/CsvHelper.dll",
+        "lib/netstandard2.0/CsvHelper.xml",
+        "lib/netstandard2.1/CsvHelper.dll",
+        "lib/netstandard2.1/CsvHelper.xml"
       ]
     },
     "DocumentFormat.OpenXml/2.5.0": {
@@ -2059,36 +2055,6 @@
         "documentformat.openxml.2.5.0.nupkg.sha512",
         "documentformat.openxml.nuspec",
         "lib/DocumentFormat.OpenXml.dll"
-      ]
-    },
-    "Extended.Wpf.Toolkit/3.8.1": {
-      "sha512": "eSD4/BY/xV29KaQi9A65VscpeU3rSrlvadIUepSx5ukeUajW3ph8+n4AlOswRMszbD4DDmrJ4g5O51bCUpiOjw==",
-      "type": "package",
-      "path": "extended.wpf.toolkit/3.8.1",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.txt",
-        "extended.wpf.toolkit.3.8.1.nupkg.sha512",
-        "extended.wpf.toolkit.nuspec",
-        "lib/net40/Xceed.Wpf.AvalonDock.Themes.Aero.dll",
-        "lib/net40/Xceed.Wpf.AvalonDock.Themes.Metro.dll",
-        "lib/net40/Xceed.Wpf.AvalonDock.Themes.VS2010.dll",
-        "lib/net40/Xceed.Wpf.AvalonDock.dll",
-        "lib/net40/Xceed.Wpf.Toolkit.dll",
-        "lib/net40/cs-CZ/Xceed.Wpf.AvalonDock.resources.dll",
-        "lib/net40/de/Xceed.Wpf.AvalonDock.resources.dll",
-        "lib/net40/es/Xceed.Wpf.AvalonDock.resources.dll",
-        "lib/net40/fr/Xceed.Wpf.AvalonDock.resources.dll",
-        "lib/net40/hu/Xceed.Wpf.AvalonDock.resources.dll",
-        "lib/net40/it/Xceed.Wpf.AvalonDock.resources.dll",
-        "lib/net40/pt-BR/Xceed.Wpf.AvalonDock.resources.dll",
-        "lib/net40/ro/Xceed.Wpf.AvalonDock.resources.dll",
-        "lib/net40/ru/Xceed.Wpf.AvalonDock.resources.dll",
-        "lib/net40/sv/Xceed.Wpf.AvalonDock.resources.dll",
-        "lib/net40/zh-Hans/Xceed.Wpf.AvalonDock.resources.dll",
-        "tools/install.ps1"
       ]
     },
     "Google.Apis/1.43.0": {
@@ -2240,21 +2206,6 @@
         "lib/netstandard2.0/Google.Apis.PeopleService.v1.dll",
         "lib/netstandard2.0/Google.Apis.PeopleService.v1.pdb",
         "lib/netstandard2.0/Google.Apis.PeopleService.v1.xml"
-      ]
-    },
-    "Humanizer.Core/2.4.2": {
-      "sha512": "1ZKy7LHVYuhmM398hpvyWCcc2Fcx+hqiGYASELDthjWhVrsA6IabYnHRfkQFF6nGG6x4fA1D0StDX/U2Pj+FdQ==",
-      "type": "package",
-      "path": "humanizer.core/2.4.2",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "humanizer.core.2.4.2.nupkg.sha512",
-        "humanizer.core.nuspec",
-        "lib/netstandard1.0/Humanizer.dll",
-        "lib/netstandard1.0/Humanizer.xml",
-        "lib/netstandard2.0/Humanizer.dll",
-        "lib/netstandard2.0/Humanizer.xml"
       ]
     },
     "MailKit/2.10.0": {
@@ -2464,6 +2415,74 @@
         "ref/net461/Microsoft.Bcl.AsyncInterfaces.dll",
         "ref/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.dll",
         "ref/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "Microsoft.CSharp/4.5.0": {
+      "sha512": "kaj6Wb4qoMuH3HySFJhxwQfe8R/sJsNJnANrvv8WdFPMoNbKY5htfNscv+LHCu5ipz+49m2e+WQXpLXr9XYemQ==",
+      "type": "package",
+      "path": "microsoft.csharp/4.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/_._",
+        "lib/netcore50/Microsoft.CSharp.dll",
+        "lib/netcoreapp2.0/_._",
+        "lib/netstandard1.3/Microsoft.CSharp.dll",
+        "lib/netstandard2.0/Microsoft.CSharp.dll",
+        "lib/portable-net45+win8+wp8+wpa81/_._",
+        "lib/uap10.0.16299/_._",
+        "lib/win8/_._",
+        "lib/wp80/_._",
+        "lib/wpa81/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "microsoft.csharp.4.5.0.nupkg.sha512",
+        "microsoft.csharp.nuspec",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/_._",
+        "ref/netcore50/Microsoft.CSharp.dll",
+        "ref/netcore50/Microsoft.CSharp.xml",
+        "ref/netcore50/de/Microsoft.CSharp.xml",
+        "ref/netcore50/es/Microsoft.CSharp.xml",
+        "ref/netcore50/fr/Microsoft.CSharp.xml",
+        "ref/netcore50/it/Microsoft.CSharp.xml",
+        "ref/netcore50/ja/Microsoft.CSharp.xml",
+        "ref/netcore50/ko/Microsoft.CSharp.xml",
+        "ref/netcore50/ru/Microsoft.CSharp.xml",
+        "ref/netcore50/zh-hans/Microsoft.CSharp.xml",
+        "ref/netcore50/zh-hant/Microsoft.CSharp.xml",
+        "ref/netcoreapp2.0/_._",
+        "ref/netstandard1.0/Microsoft.CSharp.dll",
+        "ref/netstandard1.0/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/de/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/es/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/fr/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/it/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/ja/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/ko/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/ru/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/zh-hans/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/zh-hant/Microsoft.CSharp.xml",
+        "ref/netstandard2.0/Microsoft.CSharp.dll",
+        "ref/netstandard2.0/Microsoft.CSharp.xml",
+        "ref/portable-net45+win8+wp8+wpa81/_._",
+        "ref/uap10.0.16299/_._",
+        "ref/win8/_._",
+        "ref/wp80/_._",
+        "ref/wpa81/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
@@ -2718,16 +2737,20 @@
         "microsoft.rest.clientruntime.nuspec"
       ]
     },
-    "Microsoft.VisualStudio.OLE.Interop/7.10.6071": {
-      "sha512": "PuINhJH41DbKfkNU+qcyC4Wlt/z0DgI/ViZv6gjUclylnFbUIpCdqm4fK+PKJDfiarHTKnGWkxjKuOIS1Bqs5Q==",
+    "Microsoft.VisualStudio.OLE.Interop/16.7.30328.74": {
+      "sha512": "82RWNPPaQRfFlEtkRQZgSo16a6WpHgL2gfeXbo/ISFHHJWNg/vtyKQrAW7iAsDNp5f3uiZP+9pQWxShAFrlbMw==",
       "type": "package",
-      "path": "microsoft.visualstudio.ole.interop/7.10.6071",
+      "path": "microsoft.visualstudio.ole.interop/16.7.30328.74",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "lib/Microsoft.VisualStudio.OLE.Interop.dll",
-        "lib/Microsoft.VisualStudio.OLE.Interop.xml",
-        "microsoft.visualstudio.ole.interop.7.10.6071.nupkg.sha512",
+        "LICENSE.txt",
+        "PackageIcon.png",
+        "lib/net45/Microsoft.VisualStudio.OLE.Interop.dll",
+        "lib/net45/Microsoft.VisualStudio.OLE.Interop.xml",
+        "lib/netstandard2.0/Microsoft.VisualStudio.OLE.Interop.dll",
+        "lib/netstandard2.0/Microsoft.VisualStudio.OLE.Interop.xml",
+        "microsoft.visualstudio.ole.interop.16.7.30328.74.nupkg.sha512",
         "microsoft.visualstudio.ole.interop.nuspec"
       ]
     },
@@ -2979,6 +3002,42 @@
         "mimekit.nuspec"
       ]
     },
+    "Neostella.General.Utilities/1.0.2": {
+      "sha512": "LSkbGMA4f1qmqftgrvV/yihD5CqsOKoh8STXeXmQyuOoEEYSQO9VhdilZ5FsN5dXArnym40AZBAYDuOtesRhSw==",
+      "type": "package",
+      "path": "neostella.general.utilities/1.0.2",
+      "files": [
+        ".nupkg.metadata",
+        "lib/net45/.github/CODEOWNERS",
+        "lib/net45/.github/README.md",
+        "lib/net45/.gitignore",
+        "lib/net45/.settings/Release/settings-1a5b880a.json",
+        "lib/net45/.settings/Release/settings-5190454b.json",
+        "lib/net45/.settings/Release/settings-590bb27b.json",
+        "lib/net45/.settings/Release/settings-9e9290da.json",
+        "lib/net45/.settings/Release/settings-a1b2dac1.json",
+        "lib/net45/.settings/Release/settings-afad0842.json",
+        "lib/net45/.tmh/config.json",
+        "lib/net45/Data/Utils/Python/decrypt.py",
+        "lib/net45/Data/Utils/Python/encrypt.py",
+        "lib/net45/Data/Utils/RobotStreaming/StreamingFinal/Robot Streaming.docx",
+        "lib/net45/Data/Utils/RobotStreaming/StreamingFinal/UiPathTeam.StreamRobotScreen.exe",
+        "lib/net45/Data/Utils/RobotStreaming/StreamingFinal/UiPathTeam.StreamRobotScreen.exe.config",
+        "lib/net45/Neostella.General Utilities.dll",
+        "lib/net45/Neostella.General Utilities_Expressions_17480378.dll",
+        "lib/net45/Neostella.General Utilities_Expressions_34580779.dll",
+        "lib/net45/Neostella.General Utilities_Expressions_36097706.dll",
+        "lib/net45/Neostella.General Utilities_Expressions_41997141.dll",
+        "lib/net45/Neostella.General Utilities_Expressions_52384459.dll",
+        "lib/net45/Neostella.General Utilities_Expressions_52435195.dll",
+        "lib/net45/Neostella.General Utilities_Expressions_56883331.dll",
+        "lib/net45/Neostella.General Utilities_Expressions_56944144.dll",
+        "lib/net45/Neostella.General Utilities_Expressions_59609054.dll",
+        "lib/net45/project.json",
+        "neostella.general.utilities.1.0.2.nupkg.sha512",
+        "neostella.general.utilities.nuspec"
+      ]
+    },
     "Newtonsoft.Json/13.0.1": {
       "sha512": "ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
       "type": "package",
@@ -3147,39 +3206,6 @@
         "nito.disposables.nuspec"
       ]
     },
-    "NLog/4.5.11": {
-      "sha512": "Yni/XrDfbEhaCSXJsDkmW/n5AunhOxZ7OKKb+0U1I1/d8ZaKt3Jjzf20g/xPiKljmYuZKYqI5iI34g138kK8UQ==",
-      "type": "package",
-      "path": "nlog/4.5.11",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/monoandroid44/NLog.dll",
-        "lib/monoandroid44/NLog.xml",
-        "lib/net35/NLog.dll",
-        "lib/net35/NLog.xml",
-        "lib/net40-client/NLog.dll",
-        "lib/net40-client/NLog.xml",
-        "lib/net45/NLog.dll",
-        "lib/net45/NLog.xml",
-        "lib/netstandard1.3/NLog.dll",
-        "lib/netstandard1.3/NLog.xml",
-        "lib/netstandard1.5/NLog.dll",
-        "lib/netstandard1.5/NLog.xml",
-        "lib/netstandard2.0/NLog.dll",
-        "lib/netstandard2.0/NLog.xml",
-        "lib/sl4/NLog.dll",
-        "lib/sl4/NLog.xml",
-        "lib/sl5/NLog.dll",
-        "lib/sl5/NLog.xml",
-        "lib/wp8/NLog.dll",
-        "lib/wp8/NLog.xml",
-        "lib/xamarinios10/NLog.dll",
-        "lib/xamarinios10/NLog.xml",
-        "nlog.4.5.11.nupkg.sha512",
-        "nlog.nuspec"
-      ]
-    },
     "NPOI/2.4.1": {
       "sha512": "85790/CY9z4DCU1KLpcdLSqaqaqmQOenTqXJfcsYK8LIKNAAoTgjT5LYLbORgdwAd63sbaJiCfB1SIn/dAXrJw==",
       "type": "package",
@@ -3277,24 +3303,24 @@
         "version.txt"
       ]
     },
-    "System.Collections.Immutable/1.5.0": {
-      "sha512": "EXKiDFsChZW0RjrZ4FYHu9aW6+P4MCgEDCklsVseRfhoO0F+dXeMSsMRAlVXIo06kGJ/zv+2w1a2uc2+kxxSaQ==",
+    "System.Collections.Immutable/1.4.0": {
+      "sha512": "71hw5RUJRu5+q/geUY69gpXD8Upd12cH+F3MwpXV2zle7Bqqkrmc1JblOTuvUcgmdnUtQvBlV5e1d6RH+H2lvA==",
       "type": "package",
-      "path": "system.collections.immutable/1.5.0",
+      "path": "system.collections.immutable/1.4.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
+        "lib/netcoreapp2.0/_._",
         "lib/netstandard1.0/System.Collections.Immutable.dll",
         "lib/netstandard1.0/System.Collections.Immutable.xml",
-        "lib/netstandard1.3/System.Collections.Immutable.dll",
-        "lib/netstandard1.3/System.Collections.Immutable.xml",
         "lib/netstandard2.0/System.Collections.Immutable.dll",
         "lib/netstandard2.0/System.Collections.Immutable.xml",
         "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.dll",
         "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.xml",
-        "system.collections.immutable.1.5.0.nupkg.sha512",
+        "ref/netcoreapp2.0/_._",
+        "system.collections.immutable.1.4.0.nupkg.sha512",
         "system.collections.immutable.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -3447,6 +3473,19 @@
         "system.io.pipelines.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "System.Management.Automation/6.1.7601.17515": {
+      "sha512": "mOqRM+nD607Cw+2seNWfayjtsae41rcarVHgJ5aHIn2y2RF5N6z71bIOqrpITomKzi7R0msz5gUOco041+aDTw==",
+      "type": "package",
+      "path": "system.management.automation/6.1.7601.17515",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/System.Management.Automation.dll",
+        "lib/net45/System.Management.Automation.dll",
+        "system.management.automation.6.1.7601.17515.nupkg.sha512",
+        "system.management.automation.nuspec"
       ]
     },
     "System.Memory/4.5.4": {
@@ -3903,10 +3942,10 @@
         "version.txt"
       ]
     },
-    "UiPath/20.10.7585.27318": {
-      "sha512": "JsTRlWDWgidI40/uzjexv8R+IA6fg+GHEoIT2/yUTN+0IPeypRqBhOnL2vYBKOIO7r7IdL7FFFda/1A13KeU+Q==",
+    "UiPath/21.4.25.3292": {
+      "sha512": "pSsEx7UuC6A/BmBLUr518zJHX5tiD+2lUs+3mjo5DWYdQyeWmH6Ra8R7PvNM433SXwVdTHiDzAWjtSU+cU1+VA==",
       "type": "package",
-      "path": "uipath/20.10.7585.27318",
+      "path": "uipath/21.4.25.3292",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3956,8 +3995,9 @@
         "build/UiPath/libcurl_x64.dll",
         "build/UiPath/libcurl_x86.dll",
         "build/UiPath/slinject.exe",
-        "lib/UiPath.Interop.dll",
-        "uipath.20.10.7585.27318.nupkg.sha512",
+        "lib/net45/UiPath.Interop.dll",
+        "lib/netcoreapp3.1/UiPath.Interop.dll",
+        "uipath.21.4.25.3292.nupkg.sha512",
         "uipath.nuspec"
       ]
     },
@@ -4031,14 +4071,15 @@
         "uipath.dataservice.activities.nuspec"
       ]
     },
-    "UiPath.Excel.Activities/2.9.3": {
-      "sha512": "rYWg1JGpheTGtJpNVMOhzIeEcdlejTKRduaBKRKu51VWUcEEdAGtTFRa+/tCT4/bsxQ1d/Iad068sd0NJxOhGQ==",
+    "UiPath.Excel.Activities/2.10.4": {
+      "sha512": "nKDG6X8qQJhsP1LZ0E6+VZU5c3YIBu5ibsyMf0MzeSlsTo9t+O2pyQzhKPw2MnyDboG62FrwLSk1wX1iLaizqA==",
       "type": "package",
-      "path": "uipath.excel.activities/2.9.3",
+      "path": "uipath.excel.activities/2.10.4",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/net461/UiPath.Excel.Activities.Design.dll",
+        "lib/net461/UiPath.Excel.Activities.Package.dll",
         "lib/net461/UiPath.Excel.Activities.dll",
         "lib/net461/UiPath.Excel.dll",
         "lib/net461/de/UiPath.Excel.Activities.Design.resources.dll",
@@ -4074,7 +4115,7 @@
         "lib/net461/zh-CN/UiPath.Excel.Activities.Design.resources.dll",
         "lib/net461/zh-CN/UiPath.Excel.Activities.resources.dll",
         "lib/net461/zh-CN/UiPath.Excel.resources.dll",
-        "uipath.excel.activities.2.9.3.nupkg.sha512",
+        "uipath.excel.activities.2.10.4.nupkg.sha512",
         "uipath.excel.activities.nuspec"
       ]
     },
@@ -4321,32 +4362,32 @@
         "uipath.mail.activities.nuspec"
       ]
     },
-    "UiPath.OCR.Activities/2.4.0": {
-      "sha512": "x2nnBjsYQGMYllrdtKXqoLDjgU3JBPX3CPA50fXhpG290T+nrZwzRZKpgcAdbpnERnGW0vtm0c8EHmZ4C0uwLw==",
+    "UiPath.OCR.Activities/3.0.0": {
+      "sha512": "KoWL90IrWNJ5V+oK9fO0KwmQp/Tw9DItw8PAItmxc1AwEflglhSXh8JFuBKyCOtxEybT+ZemyK7xBPS/hlCl7Q==",
       "type": "package",
-      "path": "uipath.ocr.activities/2.4.0",
+      "path": "uipath.ocr.activities/3.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "build/AForge.Imaging.dll",
-        "build/AForge.Math.dll",
-        "build/AForge.dll",
-        "build/NLog.dll",
-        "build/Newtonsoft.Json.dll",
-        "build/System.Collections.Immutable.dll",
-        "build/System.ValueTuple.dll",
-        "build/UiPath.Activities.Api.Base.dll",
-        "build/UiPath.Api.Base.dll",
-        "build/UiPath.OCR.Activities.Design.dll",
-        "build/UiPath.OCR.Activities.dll",
-        "build/UiPath.OCR.Contracts.dll",
-        "build/UiPath.OCR.Core.dll",
-        "build/UiPath.OCR.Host32.exe",
-        "build/UiPath.OCR.Host32.exe.config",
-        "build/UiPath.Robot.Activities.Api.dll",
-        "build/UiPath.Studio.Activities.Api.dll",
-        "build/UiPath.Studio.Api.Base.dll",
-        "build/nlog.config",
+        "build/net461/Magick.NET-Q8-AnyCPU.dll",
+        "build/net461/Magick.NET.Core.dll",
+        "build/net461/NLog.dll",
+        "build/net461/Newtonsoft.Json.dll",
+        "build/net461/System.Collections.Immutable.dll",
+        "build/net461/System.Net.Http.dll",
+        "build/net461/System.ValueTuple.dll",
+        "build/net461/UiPath.Activities.Api.Base.dll",
+        "build/net461/UiPath.Api.Base.dll",
+        "build/net461/UiPath.OCR.Activities.Design.dll",
+        "build/net461/UiPath.OCR.Activities.dll",
+        "build/net461/UiPath.OCR.Contracts.dll",
+        "build/net461/UiPath.OCR.Core.dll",
+        "build/net461/UiPath.OCR.Host32.exe",
+        "build/net461/UiPath.OCR.Host32.exe.config",
+        "build/net461/UiPath.Robot.Activities.Api.dll",
+        "build/net461/UiPath.Studio.Activities.Api.dll",
+        "build/net461/UiPath.Studio.Api.Base.dll",
+        "build/net461/nlog.config",
         "lib/net461/UiPath.OCR.Activities.Design.dll",
         "lib/net461/UiPath.OCR.Activities.dll",
         "lib/net461/UiPath.OCR.Core.dll",
@@ -4372,19 +4413,20 @@
         "lib/net461/tr/UiPath.OCR.Activities.resources.dll",
         "lib/net461/zh-CN/UiPath.OCR.Activities.Design.resources.dll",
         "lib/net461/zh-CN/UiPath.OCR.Activities.resources.dll",
-        "uipath.ocr.activities.2.4.0.nupkg.sha512",
+        "uipath.ocr.activities.3.0.0.nupkg.sha512",
         "uipath.ocr.activities.nuspec"
       ]
     },
-    "UiPath.OCR.Contracts/2.7.1": {
-      "sha512": "jAwY+r6FjoghmJ5YxSRyAqt5GVfHxl+hpDuTlIOR0KsS+UevmGQ0iJQuX+OspEsajG85ODk7EtI7QloKq53+6w==",
+    "UiPath.OCR.Contracts/2.7.3": {
+      "sha512": "pqbe3jNIvX1sKZ/o5/80dwF3ggtZrfqHw2q7rWRLf68E9YLzTAwX/wIHirIBX3RPYpiLDvGe5SCpBEzzLu4MBQ==",
       "type": "package",
-      "path": "uipath.ocr.contracts/2.7.1",
+      "path": "uipath.ocr.contracts/2.7.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/net461/UiPath.OCR.Contracts.dll",
-        "uipath.ocr.contracts.2.7.1.nupkg.sha512",
+        "lib/net461/UiPath.OCR.Contracts.xml",
+        "uipath.ocr.contracts.2.7.3.nupkg.sha512",
         "uipath.ocr.contracts.nuspec"
       ]
     },
@@ -4402,49 +4444,251 @@
         "uipath.platform.nuspec"
       ]
     },
-    "UiPath.System.Activities/20.10.1": {
-      "sha512": "Ho9XHfnlPXpXxPkCc9wQt5kffIuWKPSiS0TCr2yYrWs1V8cp6XKjZwv2znsB/VRMiHrQdE7ucBnvs3bpQEUouQ==",
+    "UiPath.Python.Activities/1.4.1": {
+      "sha512": "woqqupis2x2BEiStwbcH6RLOUhPTZoPa+QGNYieE1F9fd/jGm1SNFRi4dyr0jRkGTQ2vYvn/6wzPxHh0qK90Fg==",
       "type": "package",
-      "path": "uipath.system.activities/20.10.1",
+      "path": "uipath.python.activities/1.4.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "lib/net461/ActiproSoftware.Docking.Wpf.dll",
-        "lib/net461/ActiproSoftware.Ribbon.Wpf.dll",
-        "lib/net461/ActiproSoftware.Shared.Wpf.dll",
-        "lib/net461/ActiproSoftware.SyntaxEditor.Addons.DotNet.Wpf.dll",
-        "lib/net461/ActiproSoftware.SyntaxEditor.Wpf.dll",
-        "lib/net461/ActiproSoftware.Text.Addons.DotNet.Wpf.dll",
-        "lib/net461/ActiproSoftware.Text.LLParser.Wpf.dll",
-        "lib/net461/ActiproSoftware.Text.Wpf.dll",
-        "lib/net461/ActiproSoftware.Wizard.Wpf.dll",
-        "lib/net461/CustomInputForm.exe",
+        "bin/net461/UiPath.Python.Host.exe",
+        "bin/net461/UiPath.Python.Host32.exe",
+        "bin/net461/UiPath.Python.dll",
+        "bin/net461/de/UiPath.Python.resources.dll",
+        "bin/net461/es-MX/UiPath.Python.resources.dll",
+        "bin/net461/es/UiPath.Python.resources.dll",
+        "bin/net461/ja/UiPath.Python.resources.dll",
+        "bin/net461/ko/UiPath.Python.resources.dll",
+        "bin/net461/pt-BR/UiPath.Python.resources.dll",
+        "bin/net461/pt/UiPath.Python.resources.dll",
+        "bin/net461/ru/UiPath.Python.resources.dll",
+        "bin/net461/tr/UiPath.Python.resources.dll",
+        "bin/net461/x64/Python.Runtime.27.dll",
+        "bin/net461/x64/Python.Runtime.34.dll",
+        "bin/net461/x64/Python.Runtime.35.dll",
+        "bin/net461/x64/Python.Runtime.36.dll",
+        "bin/net461/x64/Python.Runtime.37.dll",
+        "bin/net461/x64/Python.Runtime.38.dll",
+        "bin/net461/x64/Python.Runtime.39.dll",
+        "bin/net461/x86/Python.Runtime.27.dll",
+        "bin/net461/x86/Python.Runtime.34.dll",
+        "bin/net461/x86/Python.Runtime.35.dll",
+        "bin/net461/x86/Python.Runtime.36.dll",
+        "bin/net461/x86/Python.Runtime.37.dll",
+        "bin/net461/x86/Python.Runtime.38.dll",
+        "bin/net461/x86/Python.Runtime.39.dll",
+        "bin/net461/zh-CN/UiPath.Python.resources.dll",
+        "bin/net5.0-windows7.0/Microsoft.CodeAnalysis.CSharp.Scripting.dll",
+        "bin/net5.0-windows7.0/Microsoft.CodeAnalysis.CSharp.dll",
+        "bin/net5.0-windows7.0/Microsoft.CodeAnalysis.Scripting.dll",
+        "bin/net5.0-windows7.0/Microsoft.CodeAnalysis.VisualBasic.Scripting.dll",
+        "bin/net5.0-windows7.0/Microsoft.CodeAnalysis.VisualBasic.dll",
+        "bin/net5.0-windows7.0/Microsoft.CodeAnalysis.dll",
+        "bin/net5.0-windows7.0/System.Activities.dll",
+        "bin/net5.0-windows7.0/UiPath.Python.Activities.Design.dll",
+        "bin/net5.0-windows7.0/UiPath.Python.Activities.dll",
+        "bin/net5.0-windows7.0/UiPath.Python.Host.deps.json",
+        "bin/net5.0-windows7.0/UiPath.Python.Host.dll",
+        "bin/net5.0-windows7.0/UiPath.Python.Host.dll.RoslynCA.json",
+        "bin/net5.0-windows7.0/UiPath.Python.Host.dll.config",
+        "bin/net5.0-windows7.0/UiPath.Python.Host.exe",
+        "bin/net5.0-windows7.0/UiPath.Python.Host.runtimeconfig.dev.json",
+        "bin/net5.0-windows7.0/UiPath.Python.Host.runtimeconfig.json",
+        "bin/net5.0-windows7.0/UiPath.Python.Host32.deps.json",
+        "bin/net5.0-windows7.0/UiPath.Python.Host32.dll",
+        "bin/net5.0-windows7.0/UiPath.Python.Host32.dll.RoslynCA.json",
+        "bin/net5.0-windows7.0/UiPath.Python.Host32.dll.config",
+        "bin/net5.0-windows7.0/UiPath.Python.Host32.exe",
+        "bin/net5.0-windows7.0/UiPath.Python.Host32.runtimeconfig.dev.json",
+        "bin/net5.0-windows7.0/UiPath.Python.Host32.runtimeconfig.json",
+        "bin/net5.0-windows7.0/UiPath.Python.Packaging.dll",
+        "bin/net5.0-windows7.0/UiPath.Python.dll",
+        "bin/net5.0-windows7.0/UiPath.Workflow.dll",
+        "bin/net5.0-windows7.0/de/UiPath.Python.resources.dll",
+        "bin/net5.0-windows7.0/es-MX/UiPath.Python.resources.dll",
+        "bin/net5.0-windows7.0/es/UiPath.Python.resources.dll",
+        "bin/net5.0-windows7.0/fr/UiPath.Python.resources.dll",
+        "bin/net5.0-windows7.0/ja/UiPath.Python.resources.dll",
+        "bin/net5.0-windows7.0/ko/UiPath.Python.resources.dll",
+        "bin/net5.0-windows7.0/pt-BR/UiPath.Python.resources.dll",
+        "bin/net5.0-windows7.0/pt/UiPath.Python.resources.dll",
+        "bin/net5.0-windows7.0/ru/UiPath.Python.resources.dll",
+        "bin/net5.0-windows7.0/tr/UiPath.Python.resources.dll",
+        "bin/net5.0-windows7.0/x64/Python.Runtime.36.dll",
+        "bin/net5.0-windows7.0/x64/Python.Runtime.37.dll",
+        "bin/net5.0-windows7.0/x64/Python.Runtime.38.dll",
+        "bin/net5.0-windows7.0/x64/Python.Runtime.39.dll",
+        "bin/net5.0-windows7.0/x86/Python.Runtime.36.dll",
+        "bin/net5.0-windows7.0/x86/Python.Runtime.37.dll",
+        "bin/net5.0-windows7.0/x86/Python.Runtime.38.dll",
+        "bin/net5.0-windows7.0/x86/Python.Runtime.39.dll",
+        "bin/net5.0-windows7.0/zh-CN/UiPath.Python.resources.dll",
+        "bin/net5.0/Microsoft.CodeAnalysis.CSharp.Scripting.dll",
+        "bin/net5.0/Microsoft.CodeAnalysis.CSharp.dll",
+        "bin/net5.0/Microsoft.CodeAnalysis.Scripting.dll",
+        "bin/net5.0/Microsoft.CodeAnalysis.VisualBasic.Scripting.dll",
+        "bin/net5.0/Microsoft.CodeAnalysis.VisualBasic.dll",
+        "bin/net5.0/Microsoft.CodeAnalysis.dll",
+        "bin/net5.0/System.Activities.dll",
+        "bin/net5.0/UiPath.Python.Activities.Design.dll",
+        "bin/net5.0/UiPath.Python.Activities.dll",
+        "bin/net5.0/UiPath.Python.Host.deps.json",
+        "bin/net5.0/UiPath.Python.Host.dll",
+        "bin/net5.0/UiPath.Python.Host.dll.RoslynCA.json",
+        "bin/net5.0/UiPath.Python.Host.dll.config",
+        "bin/net5.0/UiPath.Python.Host.exe",
+        "bin/net5.0/UiPath.Python.Host.runtimeconfig.dev.json",
+        "bin/net5.0/UiPath.Python.Host.runtimeconfig.json",
+        "bin/net5.0/UiPath.Python.Host32.deps.json",
+        "bin/net5.0/UiPath.Python.Host32.dll",
+        "bin/net5.0/UiPath.Python.Host32.dll.RoslynCA.json",
+        "bin/net5.0/UiPath.Python.Host32.dll.config",
+        "bin/net5.0/UiPath.Python.Host32.exe",
+        "bin/net5.0/UiPath.Python.Host32.runtimeconfig.dev.json",
+        "bin/net5.0/UiPath.Python.Host32.runtimeconfig.json",
+        "bin/net5.0/UiPath.Python.Packaging.dll",
+        "bin/net5.0/UiPath.Python.dll",
+        "bin/net5.0/UiPath.Workflow.dll",
+        "bin/net5.0/de/UiPath.Python.resources.dll",
+        "bin/net5.0/es-MX/UiPath.Python.resources.dll",
+        "bin/net5.0/es/UiPath.Python.resources.dll",
+        "bin/net5.0/fr/UiPath.Python.resources.dll",
+        "bin/net5.0/ja/UiPath.Python.resources.dll",
+        "bin/net5.0/ko/UiPath.Python.resources.dll",
+        "bin/net5.0/pt-BR/UiPath.Python.resources.dll",
+        "bin/net5.0/pt/UiPath.Python.resources.dll",
+        "bin/net5.0/ru/UiPath.Python.resources.dll",
+        "bin/net5.0/tr/UiPath.Python.resources.dll",
+        "bin/net5.0/x64/Python.Runtime.36.dll",
+        "bin/net5.0/x64/Python.Runtime.37.dll",
+        "bin/net5.0/x64/Python.Runtime.38.dll",
+        "bin/net5.0/x64/Python.Runtime.39.dll",
+        "bin/net5.0/x86/Python.Runtime.36.dll",
+        "bin/net5.0/x86/Python.Runtime.37.dll",
+        "bin/net5.0/x86/Python.Runtime.38.dll",
+        "bin/net5.0/x86/Python.Runtime.39.dll",
+        "bin/net5.0/zh-CN/UiPath.Python.resources.dll",
+        "lib/net461/UiPath.Python.Activities.Design.dll",
+        "lib/net461/UiPath.Python.Activities.dll",
+        "lib/net461/UiPath.Python.dll",
+        "lib/net461/de/UiPath.Python.Activities.Design.resources.dll",
+        "lib/net461/de/UiPath.Python.Activities.resources.dll",
+        "lib/net461/de/UiPath.Python.resources.dll",
+        "lib/net461/es-MX/UiPath.Python.Activities.Design.resources.dll",
+        "lib/net461/es-MX/UiPath.Python.Activities.resources.dll",
+        "lib/net461/es-MX/UiPath.Python.resources.dll",
+        "lib/net461/es/UiPath.Python.Activities.Design.resources.dll",
+        "lib/net461/es/UiPath.Python.Activities.resources.dll",
+        "lib/net461/es/UiPath.Python.resources.dll",
+        "lib/net461/fr/UiPath.Python.Activities.Design.resources.dll",
+        "lib/net461/fr/UiPath.Python.Activities.resources.dll",
+        "lib/net461/fr/UiPath.Python.resources.dll",
+        "lib/net461/ja/UiPath.Python.Activities.Design.resources.dll",
+        "lib/net461/ja/UiPath.Python.Activities.resources.dll",
+        "lib/net461/ja/UiPath.Python.resources.dll",
+        "lib/net461/ko/UiPath.Python.Activities.Design.resources.dll",
+        "lib/net461/ko/UiPath.Python.Activities.resources.dll",
+        "lib/net461/ko/UiPath.Python.resources.dll",
+        "lib/net461/pt-BR/UiPath.Python.Activities.Design.resources.dll",
+        "lib/net461/pt-BR/UiPath.Python.Activities.resources.dll",
+        "lib/net461/pt-BR/UiPath.Python.resources.dll",
+        "lib/net461/pt/UiPath.Python.Activities.Design.resources.dll",
+        "lib/net461/pt/UiPath.Python.Activities.resources.dll",
+        "lib/net461/pt/UiPath.Python.resources.dll",
+        "lib/net461/ru/UiPath.Python.Activities.Design.resources.dll",
+        "lib/net461/ru/UiPath.Python.Activities.resources.dll",
+        "lib/net461/ru/UiPath.Python.resources.dll",
+        "lib/net461/tr/UiPath.Python.Activities.Design.resources.dll",
+        "lib/net461/tr/UiPath.Python.Activities.resources.dll",
+        "lib/net461/tr/UiPath.Python.resources.dll",
+        "lib/net461/zh-CN/UiPath.Python.Activities.Design.resources.dll",
+        "lib/net461/zh-CN/UiPath.Python.Activities.resources.dll",
+        "lib/net461/zh-CN/UiPath.Python.resources.dll",
+        "lib/net5.0-windows7.0/UiPath.Python.Activities.Design.dll",
+        "lib/net5.0-windows7.0/UiPath.Python.Activities.dll",
+        "lib/net5.0-windows7.0/UiPath.Python.dll",
+        "lib/net5.0-windows7.0/de/UiPath.Python.Activities.Design.resources.dll",
+        "lib/net5.0-windows7.0/de/UiPath.Python.Activities.resources.dll",
+        "lib/net5.0-windows7.0/de/UiPath.Python.resources.dll",
+        "lib/net5.0-windows7.0/es-MX/UiPath.Python.Activities.Design.resources.dll",
+        "lib/net5.0-windows7.0/es-MX/UiPath.Python.Activities.resources.dll",
+        "lib/net5.0-windows7.0/es-MX/UiPath.Python.resources.dll",
+        "lib/net5.0-windows7.0/es/UiPath.Python.Activities.Design.resources.dll",
+        "lib/net5.0-windows7.0/es/UiPath.Python.Activities.resources.dll",
+        "lib/net5.0-windows7.0/es/UiPath.Python.resources.dll",
+        "lib/net5.0-windows7.0/fr/UiPath.Python.Activities.Design.resources.dll",
+        "lib/net5.0-windows7.0/fr/UiPath.Python.Activities.resources.dll",
+        "lib/net5.0-windows7.0/fr/UiPath.Python.resources.dll",
+        "lib/net5.0-windows7.0/ja/UiPath.Python.Activities.Design.resources.dll",
+        "lib/net5.0-windows7.0/ja/UiPath.Python.Activities.resources.dll",
+        "lib/net5.0-windows7.0/ja/UiPath.Python.resources.dll",
+        "lib/net5.0-windows7.0/ko/UiPath.Python.Activities.Design.resources.dll",
+        "lib/net5.0-windows7.0/ko/UiPath.Python.Activities.resources.dll",
+        "lib/net5.0-windows7.0/ko/UiPath.Python.resources.dll",
+        "lib/net5.0-windows7.0/pt-BR/UiPath.Python.Activities.Design.resources.dll",
+        "lib/net5.0-windows7.0/pt-BR/UiPath.Python.Activities.resources.dll",
+        "lib/net5.0-windows7.0/pt-BR/UiPath.Python.resources.dll",
+        "lib/net5.0-windows7.0/pt/UiPath.Python.Activities.Design.resources.dll",
+        "lib/net5.0-windows7.0/pt/UiPath.Python.Activities.resources.dll",
+        "lib/net5.0-windows7.0/pt/UiPath.Python.resources.dll",
+        "lib/net5.0-windows7.0/ru/UiPath.Python.Activities.Design.resources.dll",
+        "lib/net5.0-windows7.0/ru/UiPath.Python.Activities.resources.dll",
+        "lib/net5.0-windows7.0/ru/UiPath.Python.resources.dll",
+        "lib/net5.0-windows7.0/tr/UiPath.Python.Activities.Design.resources.dll",
+        "lib/net5.0-windows7.0/tr/UiPath.Python.Activities.resources.dll",
+        "lib/net5.0-windows7.0/tr/UiPath.Python.resources.dll",
+        "lib/net5.0-windows7.0/zh-CN/UiPath.Python.Activities.Design.resources.dll",
+        "lib/net5.0-windows7.0/zh-CN/UiPath.Python.Activities.resources.dll",
+        "lib/net5.0-windows7.0/zh-CN/UiPath.Python.resources.dll",
+        "uipath.python.activities.1.4.1.nupkg.sha512",
+        "uipath.python.activities.nuspec"
+      ]
+    },
+    "UiPath.System.Activities/21.4.1": {
+      "sha512": "cWISSM8KSFshDXb6Tp/ldl72JtAnuUvtEBHLVPOmL3BL0oTMujtXQWco1k7SzS4sxrNUzWsKl7My0gaDtDPhtg==",
+      "type": "package",
+      "path": "uipath.system.activities/21.4.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/net461/WorkerProcess.exe",
         "lib/net461/UiPath.OrchestratorClient.dll",
         "lib/net461/UiPath.System.Activities.Design.dll",
         "lib/net461/UiPath.System.Activities.dll",
         "lib/net461/de/UiPath.System.Activities.Design.resources.dll",
         "lib/net461/de/UiPath.System.Activities.resources.dll",
+        "lib/net461/de/WorkerProcess.resources.dll",
         "lib/net461/es-MX/UiPath.System.Activities.Design.resources.dll",
         "lib/net461/es-MX/UiPath.System.Activities.resources.dll",
+        "lib/net461/es-MX/WorkerProcess.resources.dll",
         "lib/net461/es/UiPath.System.Activities.Design.resources.dll",
         "lib/net461/es/UiPath.System.Activities.resources.dll",
+        "lib/net461/es/WorkerProcess.resources.dll",
         "lib/net461/fr/UiPath.System.Activities.Design.resources.dll",
         "lib/net461/fr/UiPath.System.Activities.resources.dll",
+        "lib/net461/fr/WorkerProcess.resources.dll",
         "lib/net461/ja/UiPath.System.Activities.Design.resources.dll",
         "lib/net461/ja/UiPath.System.Activities.resources.dll",
+        "lib/net461/ja/WorkerProcess.resources.dll",
         "lib/net461/ko/UiPath.System.Activities.Design.resources.dll",
         "lib/net461/ko/UiPath.System.Activities.resources.dll",
+        "lib/net461/ko/WorkerProcess.resources.dll",
         "lib/net461/pt-BR/UiPath.System.Activities.Design.resources.dll",
         "lib/net461/pt-BR/UiPath.System.Activities.resources.dll",
+        "lib/net461/pt-BR/WorkerProcess.resources.dll",
         "lib/net461/pt/UiPath.System.Activities.Design.resources.dll",
         "lib/net461/pt/UiPath.System.Activities.resources.dll",
+        "lib/net461/pt/WorkerProcess.resources.dll",
         "lib/net461/ru/UiPath.System.Activities.Design.resources.dll",
         "lib/net461/ru/UiPath.System.Activities.resources.dll",
+        "lib/net461/ru/WorkerProcess.resources.dll",
         "lib/net461/tr/UiPath.System.Activities.Design.resources.dll",
         "lib/net461/tr/UiPath.System.Activities.resources.dll",
+        "lib/net461/tr/WorkerProcess.resources.dll",
         "lib/net461/zh-CN/UiPath.System.Activities.Design.resources.dll",
         "lib/net461/zh-CN/UiPath.System.Activities.resources.dll",
-        "uipath.system.activities.20.10.1.nupkg.sha512",
+        "lib/net461/zh-CN/WorkerProcess.resources.dll",
+        "uipath.system.activities.21.4.1.nupkg.sha512",
         "uipath.system.activities.nuspec"
       ]
     },
@@ -4462,10 +4706,10 @@
         "uipath.telemetry.client.nuspec"
       ]
     },
-    "UiPath.UIAutomation.Activities/20.10.6": {
-      "sha512": "Z7RJ+kqc55kayK9Fe/RdIdtwBDEyAEsSuXwLpR+3Re1jeVOpsqYGKkGKFgclS+T3Pdx1UwuSBvgC+drZ8o+1mg==",
+    "UiPath.UIAutomation.Activities/21.4.4": {
+      "sha512": "wyEFOp5EZAnKC4CF8kqGhsenYHMeg5aC/l3S5owSexKCI/w4XaQ1YoHx+5/LsyNevgs6r3yRk9anoD8vA7BdoA==",
       "type": "package",
-      "path": "uipath.uiautomation.activities/20.10.6",
+      "path": "uipath.uiautomation.activities/21.4.4",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -4475,93 +4719,61 @@
         "build/ActiproSoftware.Ribbon.Wpf.dll",
         "build/ActiproSoftware.Shared.Wpf.dll",
         "build/ActiproSoftware.SyntaxEditor.Addons.DotNet.Wpf.dll",
+        "build/ActiproSoftware.SyntaxEditor.Addons.Xml.Wpf.dll",
         "build/ActiproSoftware.SyntaxEditor.Wpf.dll",
         "build/ActiproSoftware.Text.Addons.DotNet.Wpf.dll",
+        "build/ActiproSoftware.Text.Addons.Xml.Wpf.dll",
         "build/ActiproSoftware.Text.LLParser.Wpf.dll",
         "build/ActiproSoftware.Text.Wpf.dll",
         "build/ActiproSoftware.Wizard.Wpf.dll",
-        "build/ICSharpCode.AvalonEdit.dll",
         "build/System.ValueTuple.dll",
         "build/UiExplorer.exe",
+        "build/UiExplorer.exe.RoslynCA.json",
         "build/UiExplorer.exe.config",
         "build/UiExplorer_x64.exe",
         "build/UiExplorer_x64.exe.config",
         "build/UiPath.Activities.Contracts.dll",
-        "build/UiPath.UIAutomation.Activities.Design.dll",
         "build/UiPath.UIAutomationCore.dll",
         "build/UiPath.UIAutomationNext.dll",
         "build/UiPath.UiAutomation.Activities.dll",
         "build/de/UiExplorer.resources.dll",
-        "build/de/UiPath.UIAutomation.Activities.Design.resources.dll",
-        "build/de/UiPath.UIAutomationNext.Activities.Design.resources.dll",
         "build/de/UiPath.UIAutomationNext.resources.dll",
         "build/de/UiPath.UiAutomation.Activities.resources.dll",
         "build/es-MX/UiExplorer.resources.dll",
-        "build/es-MX/UiPath.UIAutomation.Activities.Design.resources.dll",
-        "build/es-MX/UiPath.UIAutomationNext.Activities.Design.resources.dll",
         "build/es-MX/UiPath.UIAutomationNext.resources.dll",
         "build/es-MX/UiPath.UiAutomation.Activities.resources.dll",
         "build/es/UiExplorer.resources.dll",
-        "build/es/UiPath.UIAutomation.Activities.Design.resources.dll",
-        "build/es/UiPath.UIAutomationNext.Activities.Design.resources.dll",
         "build/es/UiPath.UIAutomationNext.resources.dll",
         "build/es/UiPath.UiAutomation.Activities.resources.dll",
         "build/fr/UiExplorer.resources.dll",
-        "build/fr/UiPath.UIAutomation.Activities.Design.resources.dll",
-        "build/fr/UiPath.UIAutomationNext.Activities.Design.resources.dll",
         "build/fr/UiPath.UIAutomationNext.resources.dll",
         "build/fr/UiPath.UiAutomation.Activities.resources.dll",
         "build/ja/UiExplorer.resources.dll",
-        "build/ja/UiPath.UIAutomation.Activities.Design.resources.dll",
-        "build/ja/UiPath.UIAutomationNext.Activities.Design.resources.dll",
         "build/ja/UiPath.UIAutomationNext.resources.dll",
         "build/ja/UiPath.UiAutomation.Activities.resources.dll",
         "build/ko/UiExplorer.resources.dll",
-        "build/ko/UiPath.UIAutomation.Activities.Design.resources.dll",
-        "build/ko/UiPath.UIAutomationNext.Activities.Design.resources.dll",
         "build/ko/UiPath.UIAutomationNext.resources.dll",
         "build/ko/UiPath.UiAutomation.Activities.resources.dll",
         "build/pt-BR/UiExplorer.resources.dll",
-        "build/pt-BR/UiPath.UIAutomation.Activities.Design.resources.dll",
-        "build/pt-BR/UiPath.UIAutomationNext.Activities.Design.resources.dll",
         "build/pt-BR/UiPath.UIAutomationNext.resources.dll",
         "build/pt-BR/UiPath.UiAutomation.Activities.resources.dll",
         "build/pt/UiExplorer.resources.dll",
-        "build/pt/UiPath.UIAutomation.Activities.Design.resources.dll",
-        "build/pt/UiPath.UIAutomationNext.Activities.Design.resources.dll",
         "build/pt/UiPath.UIAutomationNext.resources.dll",
         "build/pt/UiPath.UiAutomation.Activities.resources.dll",
         "build/ru/UiExplorer.resources.dll",
-        "build/ru/UiPath.UIAutomation.Activities.Design.resources.dll",
-        "build/ru/UiPath.UIAutomationNext.Activities.Design.resources.dll",
         "build/ru/UiPath.UIAutomationNext.resources.dll",
         "build/ru/UiPath.UiAutomation.Activities.resources.dll",
         "build/tr/UiExplorer.resources.dll",
-        "build/tr/UiPath.UIAutomation.Activities.Design.resources.dll",
-        "build/tr/UiPath.UIAutomationNext.Activities.Design.resources.dll",
         "build/tr/UiPath.UIAutomationNext.resources.dll",
         "build/tr/UiPath.UiAutomation.Activities.resources.dll",
-        "build/zh-cn/UiExplorer.resources.dll",
-        "build/zh-cn/UiPath.UIAutomation.Activities.Design.resources.dll",
-        "build/zh-cn/UiPath.UIAutomationNext.Activities.Design.resources.dll",
-        "build/zh-cn/UiPath.UIAutomationNext.resources.dll",
-        "build/zh-cn/UiPath.UiAutomation.Activities.resources.dll",
-        "content/Resources/NodeMatchRules.xml",
-        "lib/net461/ActiproSoftware.DataGrid.Contrib.Wpf.dll",
-        "lib/net461/ActiproSoftware.Docking.Wpf.dll",
-        "lib/net461/ActiproSoftware.Editors.Wpf.dll",
-        "lib/net461/ActiproSoftware.Ribbon.Wpf.dll",
-        "lib/net461/ActiproSoftware.Shared.Wpf.dll",
-        "lib/net461/ActiproSoftware.SyntaxEditor.Addons.DotNet.Wpf.dll",
-        "lib/net461/ActiproSoftware.SyntaxEditor.Wpf.dll",
-        "lib/net461/ActiproSoftware.Text.Addons.DotNet.Wpf.dll",
-        "lib/net461/ActiproSoftware.Text.LLParser.Wpf.dll",
-        "lib/net461/ActiproSoftware.Text.Wpf.dll",
-        "lib/net461/ActiproSoftware.Wizard.Wpf.dll",
+        "build/zh-CN/UiExplorer.resources.dll",
+        "build/zh-CN/UiPath.UIAutomationNext.resources.dll",
+        "build/zh-CN/UiPath.UiAutomation.Activities.resources.dll",
         "lib/net461/UiPath.CV.Activities.Design.dll",
         "lib/net461/UiPath.CV.Activities.dll",
         "lib/net461/UiPath.CV.dll",
         "lib/net461/UiPath.UIAutomation.Activities.Design.dll",
+        "lib/net461/UiPath.UIAutomation.Activities.Package.dll",
         "lib/net461/UiPath.UIAutomationCore.dll",
         "lib/net461/UiPath.UIAutomationNext.Activities.Design.dll",
         "lib/net461/UiPath.UIAutomationNext.Activities.dll",
@@ -4648,82 +4860,78 @@
         "lib/net461/tr/UiPath.UIAutomationNext.resources.dll",
         "lib/net461/tr/UiPath.UiAutomation.Activities.resources.dll",
         "lib/net461/tr/UiPath.Wizards.resources.dll",
-        "lib/net461/zh-cn/UiPath.CV.Activities.Design.resources.dll",
-        "lib/net461/zh-cn/UiPath.CV.Activities.resources.dll",
-        "lib/net461/zh-cn/UiPath.CV.resources.dll",
-        "lib/net461/zh-cn/UiPath.UIAutomation.Activities.Design.resources.dll",
-        "lib/net461/zh-cn/UiPath.UIAutomationNext.Activities.Design.resources.dll",
-        "lib/net461/zh-cn/UiPath.UIAutomationNext.resources.dll",
-        "lib/net461/zh-cn/UiPath.UiAutomation.Activities.resources.dll",
-        "lib/net461/zh-cn/UiPath.Wizards.resources.dll",
-        "uipath.uiautomation.activities.20.10.6.nupkg.sha512",
+        "lib/net461/zh-CN/UiPath.CV.Activities.Design.resources.dll",
+        "lib/net461/zh-CN/UiPath.CV.Activities.resources.dll",
+        "lib/net461/zh-CN/UiPath.CV.resources.dll",
+        "lib/net461/zh-CN/UiPath.UIAutomation.Activities.Design.resources.dll",
+        "lib/net461/zh-CN/UiPath.UIAutomationNext.Activities.Design.resources.dll",
+        "lib/net461/zh-CN/UiPath.UIAutomationNext.resources.dll",
+        "lib/net461/zh-CN/UiPath.UiAutomation.Activities.resources.dll",
+        "lib/net461/zh-CN/UiPath.Wizards.resources.dll",
+        "uipath.uiautomation.activities.21.4.4.nupkg.sha512",
         "uipath.uiautomation.activities.nuspec"
       ]
     },
-    "UiPath.Vision/2.2.0": {
-      "sha512": "7HRT/y7gJoMrElIUEGj9xumcG+Td1s4kwMo1eYuN3Itwzk4O3mrLtH57zBq84WA3uPSTRl8AiTr/OHk6B2YBiQ==",
+    "UiPath.Vision/3.0.1": {
+      "sha512": "AoRCqHQuNQJKnumw6Jy8pfBOEPSoIJLDlURjokqkej3G79MC52XzsMLGo/XLqyVfDPmuJlvdRDSRjTpL8INADg==",
       "type": "package",
-      "path": "uipath.vision/2.2.0",
+      "path": "uipath.vision/3.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "build/AForge.Imaging.dll",
-        "build/AForge.Math.dll",
-        "build/AForge.dll",
-        "build/BouncyCastle.Crypto.dll",
-        "build/Emgu.CV.World.dll",
-        "build/Google.Api.CommonProtos.dll",
-        "build/Google.Api.Gax.Grpc.dll",
-        "build/Google.Api.Gax.dll",
-        "build/Google.Apis.Auth.PlatformServices.dll",
-        "build/Google.Apis.Auth.dll",
-        "build/Google.Apis.Core.dll",
-        "build/Google.Apis.PlatformServices.dll",
-        "build/Google.Apis.dll",
-        "build/Google.Cloud.Vision.V1.dll",
-        "build/Google.LongRunning.dll",
-        "build/Google.Protobuf.dll",
-        "build/Grpc.Auth.dll",
-        "build/Grpc.Core.dll",
-        "build/Microsoft.Azure.CognitiveServices.Vision.ComputerVision.dll",
-        "build/Microsoft.ProjectOxford.Vision.dll",
-        "build/Microsoft.Rest.ClientRuntime.Azure.dll",
-        "build/Microsoft.Rest.ClientRuntime.dll",
-        "build/NLog.dll",
-        "build/Newtonsoft.Json.dll",
-        "build/System.Collections.Immutable.dll",
-        "build/System.Interactive.Async.dll",
-        "build/System.ValueTuple.dll",
-        "build/UiPath.OCR.Contracts.dll",
-        "build/UiPath.Vision.AzureComputerVision.dll",
-        "build/UiPath.Vision.Core.dll",
-        "build/UiPath.Vision.GoogleCloud.dll",
-        "build/UiPath.Vision.Host32.exe",
-        "build/UiPath.Vision.Host32.exe.config",
-        "build/UiPath.Vision.Microsoft.dll",
-        "build/UiPath.Vision.MicrosoftCloud.dll",
-        "build/UiPath.Vision.Tesseract.dll",
-        "build/UiPath.Vision.dll",
-        "build/ZedGraph.dll",
-        "build/grpc_csharp_ext.x64.dll",
-        "build/grpc_csharp_ext.x86.dll",
-        "build/nlog.config",
-        "build/tessdata/eng.traineddata",
-        "build/x86/concrt140.dll",
-        "build/x86/cvextern.dll",
-        "build/x86/msvcp140.dll",
-        "build/x86/opencv_ffmpeg341.dll",
-        "build/x86/tbb.dll",
-        "build/x86/vcruntime140.dll",
+        "build/net461/Emgu.CV.World.dll",
+        "build/net461/Google.Api.CommonProtos.dll",
+        "build/net461/Google.Api.Gax.Grpc.dll",
+        "build/net461/Google.Api.Gax.dll",
+        "build/net461/Google.Apis.Auth.PlatformServices.dll",
+        "build/net461/Google.Apis.Auth.dll",
+        "build/net461/Google.Apis.Core.dll",
+        "build/net461/Google.Apis.PlatformServices.dll",
+        "build/net461/Google.Apis.dll",
+        "build/net461/Google.Cloud.Vision.V1.dll",
+        "build/net461/Google.LongRunning.dll",
+        "build/net461/Google.Protobuf.dll",
+        "build/net461/Grpc.Auth.dll",
+        "build/net461/Grpc.Core.dll",
+        "build/net461/Magick.NET-Q8-AnyCPU.dll",
+        "build/net461/Magick.NET.Core.dll",
+        "build/net461/Microsoft.Azure.CognitiveServices.Vision.ComputerVision.dll",
+        "build/net461/Microsoft.Rest.ClientRuntime.Azure.dll",
+        "build/net461/Microsoft.Rest.ClientRuntime.dll",
+        "build/net461/NLog.dll",
+        "build/net461/Newtonsoft.Json.dll",
+        "build/net461/System.Collections.Immutable.dll",
+        "build/net461/System.Net.Http.dll",
+        "build/net461/System.Runtime.dll",
+        "build/net461/System.ValueTuple.dll",
+        "build/net461/UiPath.OCR.Contracts.dll",
+        "build/net461/UiPath.Vision.AzureComputerVision.dll",
+        "build/net461/UiPath.Vision.Core.dll",
+        "build/net461/UiPath.Vision.GoogleCloud.dll",
+        "build/net461/UiPath.Vision.Host.Common.dll",
+        "build/net461/UiPath.Vision.Host32.exe",
+        "build/net461/UiPath.Vision.Host32.exe.config",
+        "build/net461/UiPath.Vision.Microsoft.dll",
+        "build/net461/UiPath.Vision.Tesseract.dll",
+        "build/net461/UiPath.Vision.dll",
+        "build/net461/ZedGraph.dll",
+        "build/net461/grpc_csharp_ext.x64.dll",
+        "build/net461/grpc_csharp_ext.x86.dll",
+        "build/net461/nlog.config",
+        "build/net461/tessdata/eng.traineddata",
+        "build/net461/x86/concrt140.dll",
+        "build/net461/x86/cvextern.dll",
+        "build/net461/x86/msvcp140.dll",
+        "build/net461/x86/opencv_ffmpeg341.dll",
+        "build/net461/x86/tbb.dll",
+        "build/net461/x86/vcruntime140.dll",
         "lib/net461/UiPath.Vision.AzureComputerVision.dll",
         "lib/net461/UiPath.Vision.Core.dll",
         "lib/net461/UiPath.Vision.GoogleCloud.dll",
-        "lib/net461/UiPath.Vision.Host32.exe",
         "lib/net461/UiPath.Vision.Microsoft.dll",
-        "lib/net461/UiPath.Vision.MicrosoftCloud.dll",
         "lib/net461/UiPath.Vision.Tesseract.dll",
         "lib/net461/UiPath.Vision.dll",
-        "uipath.vision.2.2.0.nupkg.sha512",
+        "uipath.vision.3.0.1.nupkg.sha512",
         "uipath.vision.nuspec"
       ]
     }
@@ -4731,11 +4939,12 @@
   "projectFileDependencyGroups": {
     "": [],
     ".NETFramework,Version=v4.6.1": [
+      "Neostella.General.Utilities >= 1.0.2 <= 1.0.2",
       "UiPath.DataService.Activities >= 21.10.0 <= 21.10.0",
-      "UiPath.Excel.Activities >= 2.9.3 <= 2.9.3",
+      "UiPath.Excel.Activities >= 2.10.4 <= 2.10.4",
       "UiPath.Mail.Activities >= 1.12.3 <= 1.12.3",
-      "UiPath.System.Activities >= 20.10.1 <= 20.10.1",
-      "UiPath.UIAutomation.Activities >= 20.10.6 <= 20.10.6"
+      "UiPath.System.Activities >= 21.4.1 <= 21.4.1",
+      "UiPath.UIAutomation.Activities >= 21.4.4 <= 21.4.4"
     ]
   },
   "packageFolders": {
@@ -4752,6 +4961,11 @@
     "frameworks": {
       "net461": {
         "dependencies": {
+          "Neostella.General.Utilities": {
+            "include": "Runtime",
+            "target": "Package",
+            "version": "[1.0.2, 1.0.2]"
+          },
           "UiPath.DataService.Activities": {
             "include": "Runtime",
             "target": "Package",
@@ -4760,7 +4974,7 @@
           "UiPath.Excel.Activities": {
             "include": "Runtime",
             "target": "Package",
-            "version": "[2.9.3, 2.9.3]"
+            "version": "[2.10.4, 2.10.4]"
           },
           "UiPath.Mail.Activities": {
             "include": "Runtime",
@@ -4770,12 +4984,12 @@
           "UiPath.System.Activities": {
             "include": "Runtime",
             "target": "Package",
-            "version": "[20.10.1, 20.10.1]"
+            "version": "[21.4.1, 21.4.1]"
           },
           "UiPath.UIAutomation.Activities": {
             "include": "Runtime",
             "target": "Package",
-            "version": "[20.10.6, 20.10.6]"
+            "version": "[21.4.4, 21.4.4]"
           }
         }
       }

@@ -214,7 +214,7 @@
                             </ui:CursorPosition>
                           </ui:Click.CursorPosition>
                           <ui:Click.Target>
-                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d2838e70-eaf0-47d0-94fc-0a76ce050925" InformativeScreenshot="76164223dfd450d47ce4be72428efc08" Selector="&lt;webctrl aaname='                         Sign On                     ' tag='A' /&gt;">
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d2838e70-eaf0-47d0-94fc-0a76ce050925" InformativeScreenshot="76164223dfd450d47ce4be72428efc08" Selector="&lt;html app='chrome.exe' title='Fannie Mae Authentication &amp;amp; Authorization Services - Central Login' /&gt;&lt;webctrl id='signOnButton' tag='A' /&gt;">
                               <ui:Target.TimeoutMS>
                                 <InArgument x:TypeArguments="x:Int32" />
                               </ui:Target.TimeoutMS>
